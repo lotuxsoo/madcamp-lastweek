@@ -1,10 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../css/form.css";
 import "../css/reset.css";
 import "../css/result.css";
 import "../css/style.css";
 
 function TestPage2() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const testRefs = useRef([]);
+
+  const scrollToTest = (index) => {
+    if (testRefs.current[index]) {
+      testRefs.current[index].scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleNextButtonClick = () => {
+    const currentTestIndex = testRefs.current.findIndex((ref) =>
+      ref.classList.contains("current")
+    );
+    if (currentTestIndex >= 0) {
+      scrollToTest(currentTestIndex + 1);
+    }
+  };
+
+  const handlePrevButtonClick = () => {
+    const currentTestIndex = testRefs.current.findIndex((ref) =>
+      ref.classList.contains("current")
+    );
+    if (currentTestIndex > 0) {
+      scrollToTest(currentTestIndex - 1);
+    }
+  };
+
   return (
     <section id="survey">
       <div className="wrapper">
@@ -14,7 +44,10 @@ function TestPage2() {
             name="csrfmiddlewaretoken"
             value="a3Np13S61gdwUtBoimms9BhSFLK6InNFKnOKXRFBzLZGouatjuH3kBk1e64bEXE1"
           />
-          <div className="test">
+          <div
+            className="test current"
+            ref={(el) => (testRefs.current[0] = el)}
+          >
             <div className="question_container">
               <h3 className="number">1/10</h3>
               <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
@@ -95,13 +128,13 @@ function TestPage2() {
               </div>
             </div>
             <div className="btn_wrap">
-              <button className="next_btn" onClick={{}}>
-                "다 음"
+              <button className="next_btn" onClick={handleNextButtonClick}>
+                다 음
               </button>
             </div>
           </div>
 
-          <div className="test">
+          <div className="test" ref={(el) => (testRefs.current[1] = el)}>
             <div className="question_container">
               <h3 className="number">2/10</h3>
               <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
@@ -170,11 +203,11 @@ function TestPage2() {
               </div>
             </div>
             <div className="btn_wrap btn_sort">
-              <button className="prev_btn" onClick={{}}>
+              <button className="prev_btn" onClick={handlePrevButtonClick}>
                 이 전
               </button>
-              <button className="next_btn" onClick={{}}>
-                "다 음"
+              <button className="next_btn" onClick={handleNextButtonClick}>
+                다 음
               </button>
             </div>
           </div>
