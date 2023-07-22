@@ -28,7 +28,11 @@ function TestPage1() {
     <div className="testPage1">
       <div className="survey">
         <form id="form" onSubmit={handleSubmit}>
-          <div className="test" ref={refs[0]}>
+          <div
+            className="test"
+            ref={refs[0]}
+            style={{ display: showNextTest === 0 ? "block" : "none" }}
+          >
             <div className="question_container">
               <h3 className="number">1/10</h3>
               <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
@@ -62,7 +66,11 @@ function TestPage1() {
               </button>
             </div>
           </div>
-          <div className="test" ref={refs[1]}>
+          <div
+            className="test"
+            ref={refs[1]}
+            style={{ display: showNextTest === 1 ? "block" : "none" }}
+          >
             <div className="question_container">
               <h3 className="number">2/10</h3>
               <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
@@ -99,7 +107,11 @@ function TestPage1() {
               <button className="prev_btn">이 전</button>
             </div>
           </div>
-          <div className="test" ref={refs[2]}>
+          <div
+            className="test"
+            ref={refs[2]}
+            style={{ display: showNextTest === 2 ? "block" : "none" }}
+          >
             <div className="question_container">
               <h3 className="number">3/10</h3>
               <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
