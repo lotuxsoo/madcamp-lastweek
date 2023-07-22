@@ -50,7 +50,7 @@ function TestPage2() {
           >
             <div className="question_container">
               <h3 className="number">1/10</h3>
-              <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
+              <h3 className="question">당신이 가장 재밌었던 수업은????</h3>
             </div>
             <div className="answer">
               <div>
