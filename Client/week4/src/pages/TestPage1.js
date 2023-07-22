@@ -42,7 +42,7 @@ function TestPage1() {
                 type="radio"
                 name="question1"
                 id="choice1-1"
-                value="5"
+                value="1"
                 required=""
                 onChange={() => setQuestion1(1)}
               />
