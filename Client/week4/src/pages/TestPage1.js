@@ -10,8 +10,8 @@ function TestPage1() {
     setShowNextTest(showNextTest + 1); // increase the state by 1 when next button is clicked
   };
   const [question1, setQuestion1] = useState("");
-  const [question9, setQuestion9] = useState("");
-  const [question10, setQuestion10] = useState("");
+  const [question2, setQuestion2] = useState("");
+  const [question3, setQuestion3] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,22 +36,22 @@ function TestPage1() {
             <div className="answer">
               <input
                 type="radio"
-                name="question-1"
-                id="choice-1"
+                name="question1"
+                id="choice1-1"
                 value="5"
                 required=""
                 onChange={() => setQuestion1(1)}
               />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
+              <label for="choice1-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
               <input
                 type="radio"
-                name="question-1"
-                id="choice-2"
+                name="question1"
+                id="choice1-2"
                 value="1"
                 required=""
                 onChange={() => setQuestion1(2)}
               />
-              <label for="choice-2">
+              <label for="choice1-2">
                 2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
                 Network, Ubuntu, CentOS, 부하분산, etc)
               </label>
@@ -70,22 +70,22 @@ function TestPage1() {
             <div className="answer">
               <input
                 type="radio"
-                name="question-1"
-                id="choice-1"
-                value="5"
-                required=""
-                onChange={() => setQuestion9(1)}
-              />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
-              <input
-                type="radio"
-                name="question-1"
-                id="choice-2"
+                name="question2"
+                id="choice2-1"
                 value="1"
                 required=""
-                onChange={() => setQuestion9(2)}
+                onChange={() => setQuestion2(1)}
               />
-              <label for="choice-2">
+              <label for="choice2-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
+              <input
+                type="radio"
+                name="question2"
+                id="choice2-2"
+                value="2"
+                required=""
+                onChange={() => setQuestion2(2)}
+              />
+              <label for="choice2-2">
                 2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
                 Network, Ubuntu, CentOS, 부하분산, etc)
               </label>
@@ -107,22 +107,22 @@ function TestPage1() {
             <div className="answer">
               <input
                 type="radio"
-                name="question-1"
-                id="choice-1"
-                value="5"
-                required=""
-                onChange={() => setQuestion10(1)}
-              />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
-              <input
-                type="radio"
-                name="question-1"
-                id="choice-2"
+                name="question3"
+                id="choice3-1"
                 value="1"
                 required=""
-                onChange={() => setQuestion10(2)}
+                onChange={() => setQuestion3(1)}
               />
-              <label for="choice-2">
+              <label for="choice3-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
+              <input
+                type="radio"
+                name="question3"
+                id="choice3-2"
+                value="2"
+                required=""
+                onChange={() => setQuestion3(2)}
+              />
+              <label for="choice3-2">
                 2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
                 Network, Ubuntu, CentOS, 부하분산, etc)
               </label>
