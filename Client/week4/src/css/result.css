@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'GmarketSansMedium';  
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #FAF1BE;
+    color: #000;
+    font-family: "NEXON Lv1 Gothic OTF";
+}
+
+#result_content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+#result_content .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.titles h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.titles h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.result_explains {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    line-height: 1.5;
+}
+
+.result_explains .explain {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.result_explains .title {
+    font-family: "GmarketSansMedium";
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 3px solid #EA7E7C;
+    border-bottom: 3px solid #EA7E7C;
+}
+
+.explain h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.explain ul {
+    list-style-type: disc;
+    padding: 0 20px;
+}
+
+.explain li {
+    padding: 10px 0px;
+}
+
+.lectures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 3px solid #EA7E7C;
+    padding-bottom: 50px;
+}
+
+.lectures .title {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "GmarketSansMedium";
+    color: #EA7E7C;
+    text-align: center;
+    position: relative;
+}
+
+.lectures .title:before, .lectures .title:after{
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background-color: #EA7E7C;
+    position: absolute;
+}
+
+.lectures .title:before {
+    left: 0;
+    top: 50%;
+}
+
+.lectures .title:after {
+    right: 0;
+    top: 50%;
+}
+
+.lectures p {
+    padding: 50px 0;
+    line-height: 1.5;
+}
+
+.lectures ul {
+    width: 400px;
+}
+
+.lectures li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+    padding: 20px 0;
+}
+
+.lectures a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+}
+
+.lectures a:hover img {
+    transform: scale(1.05);
+}
+
+.lectures a:hover button{ 
+    text-decoration: underline;
+}
+
+.lectures li img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    transition: transform 0.5s;
+}
+
+.lectures button {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #7F47DD;
+    font-family: "NEXON Lv1 Gothic OTF";
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.share button {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #4999e4;
+    font-family: "NEXON Lv1 Gothic OTF";
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #61b06a;
+    font-family: "NEXON Lv1 Gothic OTF";
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
