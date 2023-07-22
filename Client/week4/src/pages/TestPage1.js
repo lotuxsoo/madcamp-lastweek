@@ -10,6 +10,13 @@ function TestPage1() {
   const goToNext = () => {
     setShowNextTest(showNextTest + 1); // increase the state by 1 when next button is clicked
   };
+
+  const goToPrev = () => {
+    if(showNextTest > 0){
+      setShowNextTest(showNextTest - 1); // decrease the state by 1 when prev button is clicked
+    }
+  };
+
   const [question1, setQuestion1] = useState("");
   const [question2, setQuestion2] = useState("");
   const [question3, setQuestion3] = useState("");
@@ -97,7 +104,7 @@ function TestPage1() {
               </button>
             </div>
             <div className="btn_wrap btn_sort">
-              <button className="prev_btn">이 전</button>
+              <button className="prev_btn" onClick={goToPrev}>이 전</button>
             </div>
           </div>
           <div className="test" ref={refs[2]}>
@@ -134,12 +141,12 @@ function TestPage1() {
               </button>
             </div>
             <div className="btn_wrap btn_sort">
-              <button className="prev_btn">이 전</button>
+              <button className="prev_btn" onClick={goToPrev}>이 전</button>
             </div>
           </div>
 
-          <div className="btn_wrap btn_sort" ref={refs[3]}>
-            <button className="prev_btn">이 전</button>
+          <div className="test" ref={refs[3]}>
+            <button className="prev_btn" onClick={goToPrev}>이 전</button>
             <input type="submit" value="제 출" className="submit_btn" />
           </div>
         </form>
