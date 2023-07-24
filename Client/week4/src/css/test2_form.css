@@ -15,7 +15,7 @@
 }
 
 .testPage2 {
-  background-color: #f2f2f2;
+  background-color: #F2F2F2;
   color: #000;
   font-family: "NEXON Lv1 Gothic OTF";
   min-height: 100vh;
@@ -33,7 +33,7 @@
 .testPage2 .test {
   max-width: 600px;
   padding-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 2300px;
 }
 
 .testPage2 .question_container {
@@ -91,29 +91,32 @@
 .testPage2 .next_btn,
 .testPage2 .prev_btn,
 .testPage2 .submit_btn {
-  background-color: #049dd9;
+  background-color: #9C8BD9;
   color: #fff;
+  width: 100px;
+  height: 50px;
 }
 
 .testPage2 .next_btn:hover,
 .testPage2 .prev_btn:hover,
 .testPage2 .submit_btn:hover {
   background-color: #fff;
-  color: #049dd9;
+  color: #9C8BD9;
 }
 
 .testPage2 button {
   width: 100px;
-  height: 50px;
+  height: 80px;
   padding: 5px;
   border-style: none;
   border-radius: 10px;
   font-size: 20px;
   font-family: "NEXON Lv1 Gothic OTF";
-  background-color: #d5e5f2;
+  background-color: #B8BDD9;
   cursor: pointer;
   color: #000;
 }
+
 
 .testPage2 button:hover {
   background-color: #fff;
