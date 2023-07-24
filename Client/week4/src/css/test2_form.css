@@ -33,6 +33,7 @@
 .testPage2 .test {
   max-width: 600px;
   padding-top: 50px;
+  margin-bottom: 100px;
 }
 
 .testPage2 .question_container {
@@ -72,28 +73,61 @@
   justify-content: center;
 }
 
+.testPage2 .btn_sort {
+  justify-content: space-between;
+}
+
+/* .testPage2 .btn_wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .testPage2 .btn_two {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+} */
+
+.testPage2 .next_btn,
+.testPage2 .prev_btn,
+.testPage2 .submit_btn {
+  background-color: #049dd9;
+  color: #fff;
 }
 
-.testPage2 button,
-.testPage2 .submit_btn {
+.testPage2 .next_btn:hover,
+.testPage2 .prev_btn:hover,
+.testPage2 .submit_btn:hover {
+  background-color: #fff;
+  color: #049dd9;
+}
+
+.testPage2 button {
   width: 100px;
-  height: 40px;
+  height: 50px;
   padding: 5px;
   border-style: none;
   border-radius: 10px;
   font-size: 20px;
   font-family: "NEXON Lv1 Gothic OTF";
-  background-color: #ecf23d;
+  background-color: #d5e5f2;
   cursor: pointer;
-  color: #fff;
+  color: #000;
 }
 
-.testPage2 button:hover,
-.testPage2 .submit_btn:hover {
+.testPage2 button:hover {
   background-color: #fff;
-  color: #ecf23d;
+  color: #000;
+}
+
+.answer button {
+  display: block;
+  margin-bottom: 10px;
+  width: 600px;
+  /* Add other styles as needed */
+}
+
+.answer .selected {
+  background-color: #fff;
+  color: #000;
 }
