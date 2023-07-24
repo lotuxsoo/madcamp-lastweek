@@ -31,16 +31,16 @@ function TestPage2() {
   const [question10, setQuestion10] = useState("");
 
   const getInputValue = () => {
-    const inputValue1 = refs[0].current.value;
-    const inputValue2 = refs[1].current.value;
-    const inputValue3 = refs[2].current.value;
-    const inputValue4 = refs[3].current.value;
-    const inputValue5 = refs[4].current.value;
-    const inputValue6 = refs[5].current.value;
-    const inputValue7 = refs[6].current.value;
-    const inputValue8 = refs[7].current.value;
-    const inputValue9 = refs[8].current.value;
-    const inputValue10 = refs[9].current.value;
+    const inputValue1 = question1;
+    const inputValue2 = question2;
+    const inputValue3 = question3;
+    const inputValue4 = question4;
+    const inputValue5 = question5;
+    const inputValue6 = question6;
+    const inputValue7 = question7;
+    const inputValue8 = question8;
+    const inputValue9 = question9;
+    const inputValue10 = question10;
     console.log(`Input 1 value: ${inputValue1}`);
     console.log(`Input 2 value: ${inputValue2}`);
     console.log(`Input 3 value: ${inputValue3}`);
@@ -55,11 +55,24 @@ function TestPage2() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getInputValue();
+    const currentQuestionState = eval('question' + (showNextTest + 1));
+    if (currentQuestionState === "") {
+      alert("정답을 선택해주세요");
+    }
+    else{
+      getInputValue();
+      navigate("/Coupang2");
+    }
   };
 
   const goToNext = () => {
-    setShowNextTest(showNextTest + 1); // increase the state by 1 when next button is clicked
+    
+    const currentQuestionState = eval('question' + (showNextTest + 1));
+    if (currentQuestionState === "") {
+      alert("정답을 선택해주세요");
+    } else {
+      setShowNextTest(showNextTest + 1);
+    }
   };
 
   const goToPrev = () => {
@@ -68,9 +81,7 @@ function TestPage2() {
     }
   };
 
-  const goToResult = () => {
-    navigate("/result2");
-  };
+  
 
   useEffect(() => {
     if (showNextTest < refs.length) {
@@ -88,6 +99,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question1 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion1(1)}
@@ -95,6 +107,7 @@ function TestPage2() {
                 게임 개발(유니티, 언리얼, Pygame)
               </button>
               <button
+                type="button"
                 className={question1 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion1(2)}
@@ -103,6 +116,7 @@ function TestPage2() {
                 CentOS, etc)
               </button>
               <button
+                type="button"
                 className={question1 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion1(3)}
@@ -110,6 +124,7 @@ function TestPage2() {
                 정보보안(해킹과 방어)
               </button>
               <button
+                type="button"
                 className={question1 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion1(4)}
@@ -117,6 +132,7 @@ function TestPage2() {
                 프론트엔드(HTML, CSS, JavaScript, etc)
               </button>
               <button
+                type="button"
                 className={question1 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion1(5)}
@@ -124,6 +140,7 @@ function TestPage2() {
                 데이터 분석과 인공지능(전처리, 분석, 시각화, 머신러닝, 딥러닝)
               </button>
               <button
+                type="button"
                 className={question1 === 6 ? "selected" : ""}
                 value="6"
                 onClick={() => setQuestion1(6)}
@@ -132,7 +149,7 @@ function TestPage2() {
               </button>
             </div>
             <div className="btn_wrap">
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -146,6 +163,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question2 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion2(1)}
@@ -153,6 +171,7 @@ function TestPage2() {
                 데이터 분석을 통한 효과적인 개인 맞춤형 서비스
               </button>
               <button
+                type="button"
                 className={question2 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion2(2)}
@@ -160,6 +179,7 @@ function TestPage2() {
                 화려하거나 품격있는 디자인, 흥미로운 콘텐츠 제작
               </button>
               <button
+                type="button"
                 className={question2 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion2(3)}
@@ -167,6 +187,7 @@ function TestPage2() {
                 게임적인(Gamification, 게이미피케이션) 요소 도입
               </button>
               <button
+                type="button"
                 className={question2 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion2(4)}
@@ -174,6 +195,7 @@ function TestPage2() {
                 안정적인 서비스 운용
               </button>
               <button
+                type="button"
                 className={question2 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion2(5)}
@@ -185,10 +207,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -203,6 +225,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question3 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion3(1)}
@@ -210,6 +233,7 @@ function TestPage2() {
                 서브 페이지 화면 로딩 시간이 딜레이되는 현상
               </button>
               <button
+                type="button"
                 className={question3 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion3(2)}
@@ -217,6 +241,7 @@ function TestPage2() {
                 데이터 분석을 통한 맞춤형 광고 서비스 오류
               </button>
               <button
+                type="button"
                 className={question3 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion3(3)}
@@ -224,6 +249,7 @@ function TestPage2() {
                 홈페이지 화면의 뒤틀린 이미지, 폰트 깨짐 현상
               </button>
               <button
+                type="button"
                 className={question3 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion3(4)}
@@ -231,6 +257,7 @@ function TestPage2() {
                 (개인정보 보호법에는 저촉되지 않지만) 민감 정보가 노출되는 현상
               </button>
               <button
+                type="button"
                 className={question3 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion3(5)}
@@ -242,10 +269,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -260,6 +287,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question4 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion4(1)}
@@ -267,6 +295,7 @@ function TestPage2() {
                 개발자 친구 : "네가 만든 사이트 진짜 예쁘다!"
               </button>
               <button
+                type="button"
                 className={question4 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion4(2)}
@@ -275,6 +304,7 @@ function TestPage2() {
                 로그인이 다 들어가 있네, 난 요즘 이런게 편하더라."
               </button>
               <button
+                type="button"
                 className={question4 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion4(3)}
@@ -283,6 +313,7 @@ function TestPage2() {
                 사이트는 완벽해."
               </button>
               <button
+                type="button"
                 className={question4 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion4(4)}
@@ -291,6 +322,7 @@ function TestPage2() {
                 너무 좋더라!
               </button>
               <button
+                type="button"
                 className={question4 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion4(5)}
@@ -303,10 +335,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -321,6 +353,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question5 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion5(1)}
@@ -328,6 +361,7 @@ function TestPage2() {
                 일단 효과가 좋은걸 사자! 고농축 영양제 구매
               </button>
               <button
+                type="button"
                 className={question5 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion5(2)}
@@ -335,6 +369,7 @@ function TestPage2() {
                 화려한 상품 상세 페이지가 내 눈을 사로잡는다. 이걸로 사야지!
               </button>
               <button
+                type="button"
                 className={question5 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion5(3)}
@@ -342,6 +377,7 @@ function TestPage2() {
                 동일한 영양제 함량을 제조사별로 비교해 봐야지
               </button>
               <button
+                type="button"
                 className={question5 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion5(4)}
@@ -349,6 +385,7 @@ function TestPage2() {
                 믿을 수 있는 영양제가 맞나? 꼼꼼하게 따져봐야겠어
               </button>
               <button
+                type="button"
                 className={question5 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion5(5)}
@@ -360,10 +397,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -378,6 +415,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question6 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion6(1)}
@@ -385,6 +423,7 @@ function TestPage2() {
                 "어떤 빵이 제일 잘 나갈까?" 수요를 조사해서 새로운 메뉴 만들기
               </button>
               <button
+                type="button"
                 className={question6 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion6(2)}
@@ -392,6 +431,7 @@ function TestPage2() {
                 "빵집은 빵이 맛있어야지!" 효율이 좋은 새 오븐 사기
               </button>
               <button
+                type="button"
                 className={question6 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion6(3)}
@@ -400,6 +440,7 @@ function TestPage2() {
                 새로운 이벤트 만들기
               </button>
               <button
+                type="button"
                 className={question6 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion6(4)}
@@ -408,6 +449,7 @@ function TestPage2() {
                 설치하기
               </button>
               <button
+                type="button"
                 className={question6 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion6(5)}
@@ -420,10 +462,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -438,6 +480,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question7 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion7(1)}
@@ -445,6 +488,7 @@ function TestPage2() {
                 난 내 눈을 믿는다 너한테 가장 잘 어울리는 옷은 내가 알아!
               </button>
               <button
+                type="button"
                 className={question7 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion7(2)}
@@ -452,6 +496,7 @@ function TestPage2() {
                 겨울옷은 따뜻해야지~ 기능 중시! 이번 겨울 최고 한파래
               </button>
               <button
+                type="button"
                 className={question7 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion7(3)}
@@ -460,6 +505,7 @@ function TestPage2() {
                 마음에 들어하는 옷은 이미 내 뇌 속에 있다!
               </button>
               <button
+                type="button"
                 className={question7 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion7(4)}
@@ -468,6 +514,7 @@ function TestPage2() {
                 제품을 사줘야지!
               </button>
               <button
+                type="button"
                 className={question7 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion7(5)}
@@ -480,10 +527,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -498,6 +545,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question8 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion8(1)}
@@ -506,6 +554,7 @@ function TestPage2() {
                 포장한 음료!
               </button>
               <button
+                type="button"
                 className={question8 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion8(2)}
@@ -514,6 +563,7 @@ function TestPage2() {
                 정확한 용량과 제조법은 필수!
               </button>
               <button
+                type="button"
                 className={question8 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion8(3)}
@@ -522,6 +572,7 @@ function TestPage2() {
                 찾아보자!
               </button>
               <button
+                type="button"
                 className={question8 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion8(4)}
@@ -530,6 +581,7 @@ function TestPage2() {
                 관심을 끌자!
               </button>
               <button
+                type="button"
                 className={question8 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion8(5)}
@@ -542,10 +594,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -560,6 +612,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question9 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion9(1)}
@@ -568,6 +621,7 @@ function TestPage2() {
                 자랑해야지!
               </button>
               <button
+                type="button"
                 className={question9 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion9(2)}
@@ -576,6 +630,7 @@ function TestPage2() {
                 찾아보자!
               </button>
               <button
+                type="button"
                 className={question9 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion9(3)}
@@ -583,6 +638,7 @@ function TestPage2() {
                 준비물은 다 챙겨왔지? 빠뜨린 거 없는지 다시 확인하자!
               </button>
               <button
+                type="button"
                 className={question9 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion9(4)}
@@ -591,6 +647,7 @@ function TestPage2() {
                 알아보자!
               </button>
               <button
+                type="button"
                 className={question9 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion9(5)}
@@ -602,10 +659,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="next_btn" onClick={goToNext}>
+              <button className="next_btn" type="button" onClick={goToNext}>
                 다 음
               </button>
             </div>
@@ -619,6 +676,7 @@ function TestPage2() {
             </div>
             <div className="answer">
               <button
+                type="button"
                 className={question10 === 1 ? "selected" : ""}
                 value="1"
                 onClick={() => setQuestion10(1)}
@@ -626,6 +684,7 @@ function TestPage2() {
                 집 꾸미기에 도움이 되는 예쁜 인테리어 소품을 골라볼까?
               </button>
               <button
+                type="button"
                 className={question10 === 2 ? "selected" : ""}
                 value="2"
                 onClick={() => setQuestion10(2)}
@@ -633,6 +692,7 @@ function TestPage2() {
                 실용성이 갑이지! 화장지랑 수건 세트랑...
               </button>
               <button
+                type="button"
                 className={question10 === 3 ? "selected" : ""}
                 value="3"
                 onClick={() => setQuestion10(3)}
@@ -640,6 +700,7 @@ function TestPage2() {
                 음... 우선 센스있는 집들이 선물 먼저 검색해봐야지!
               </button>
               <button
+                type="button"
                 className={question10 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion10(4)}
@@ -647,6 +708,7 @@ function TestPage2() {
                 집들이 가서 뭐하겠어! 보드 게임이나 사 가자!
               </button>
               <button
+                type="button"
                 className={question10 === 5 ? "selected" : ""}
                 value="5"
                 onClick={() => setQuestion10(5)}
@@ -658,10 +720,10 @@ function TestPage2() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button className="prev_btn" onClick={goToPrev}>
+              <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="submit_btn" onClick={goToResult}>
+              <button className="submit_btn" >
                 제 출
               </button>
             </div>

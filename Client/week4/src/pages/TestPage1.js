@@ -1,8 +1,8 @@
 import React, { useState, createRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/test1_form.css";
-import question1Img from "../assets/test1-1-male.png";
-import question2Img from "../assets/test1-2-male.png";
+import question1Img from "../assets/test1-1-male.PNG";
+import question2Img from "../assets/test1-2-male.PNG";
 import question3Img from "../assets/test1-3-male.png";
 import question4Img from "../assets/test1-4-male.PNG";
 import question5Img from "../assets/test1-5-male.PNG";
@@ -13,8 +13,34 @@ function TestPage1() {
   const navigate = useNavigate();
   const [showNextTest, setShowNextTest] = useState(0);
   const refs = [createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef()];
+
+  const getInputValue = () => {
+    const inputValue1 = question1;
+    const inputValue2 = question2
+    const inputValue3 = question3
+    const inputValue4 = question4
+    const inputValue5 = question5
+    const inputValue6 = question6
+    const inputValue7 = question7
+    const inputValue8 = question8
+
+    console.log(`Input 1 value: ${inputValue1}`);
+    console.log(`Input 2 value: ${inputValue2}`);
+    console.log(`Input 3 value: ${inputValue3}`);
+    console.log(`Input 4 value: ${inputValue4}`);
+    console.log(`Input 5 value: ${inputValue5}`);
+    console.log(`Input 6 value: ${inputValue6}`);
+    console.log(`Input 7 value: ${inputValue7}`);
+    console.log(`Input 8 value: ${inputValue8}`);
+  };
   const goToNext = () => {
-    setShowNextTest(showNextTest + 1); // increase the state by 1 when next button is clicked
+    
+    const currentQuestionState = eval('question' + (showNextTest + 1));
+    if (currentQuestionState === "") {
+      alert("정답을 선택해주세요");
+    } else {
+      setShowNextTest(showNextTest + 1);
+    }
   };
 
   const goToPrev = () => {
@@ -34,9 +60,15 @@ function TestPage1() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Open the coupang link in a new window/tab
-    // Navigate to the result page in the original window
+     
+    const currentQuestionState = eval('question' + (showNextTest + 1));
+    if (currentQuestionState === "") {
+      alert("정답을 선택해주세요");
+    }
+    else{
+      getInputValue();
     navigate('/coupang');
+    }
   };
 
   useEffect(() => {
@@ -433,10 +465,10 @@ function TestPage1() {
               className="btn_wrap"
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <button type="button" lassName="prev_btn" onClick={goToPrev}>
+              <button type="button" className="prev_btn" onClick={goToPrev}>
                 이 전
               </button>
-              <input type="submit" value="제 출" className="submit_btn" />
+              <button   className="submit_btn"  >제 출</button>
             </div>
           </div>
         </form>
