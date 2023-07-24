@@ -1,10 +1,9 @@
-
 import React, { useState, createRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/test1_form.css";
-import question1Img from '../assets/test1-1-male.PNG';
-import question2Img from '../assets/test1-2-male.PNG';
-import question3Img from '../assets/test1-3-male.png';
+import question1Img from "../assets/test1-1-male.PNG";
+import question2Img from "../assets/test1-2-male.PNG";
+import question3Img from "../assets/test1-3-male.png";
 
 function TestPage1() {
   const navigate = useNavigate();
@@ -108,9 +107,16 @@ function TestPage1() {
                 가격이 매우 비싼 고급 레스토랑
               </button>
             </div>
-            <div className="btn_wrap" style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <button className="prev_btn" onClick={goToPrev}>이 전</button>
-              <button className="next_btn" onClick={goToNext}>다 음</button>
+            <div
+              className="btn_wrap"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <button className="prev_btn" onClick={goToPrev}>
+                이 전
+              </button>
+              <button className="next_btn" onClick={goToNext}>
+                다 음
+              </button>
             </div>
           </div>
           <div className="test" ref={refs[2]}>
@@ -148,14 +154,23 @@ function TestPage1() {
                 날씨 더운데 오시느라 힘들지 않으셨어요?
               </button>
             </div>
-            <div className="btn_wrap" style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <button className="prev_btn" onClick={goToPrev}>이 전</button>
-              <button className="next_btn" onClick={goToNext}>다 음</button>
+            <div
+              className="btn_wrap"
+              style={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <button className="prev_btn" onClick={goToPrev}>
+                이 전
+              </button>
+              <button className="next_btn" onClick={goToNext}>
+                다 음
+              </button>
             </div>
           </div>
 
           <div className="test" ref={refs[3]}>
-            <button className="prev_btn" onClick={goToPrev}>이 전</button>
+            <button className="prev_btn" onClick={goToPrev}>
+              이 전
+            </button>
             <input type="submit" value="제 출" className="submit_btn" />
           </div>
         </form>
