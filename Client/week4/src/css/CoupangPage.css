@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* set the height to the viewport height */
+    flex-direction: column; /* added this line */
+  }
+  
+  .center-button {
+    background-color: blue;
+    color: white;  /* text color */
+    padding: 20px 40px;  /* increased vertical padding and horizontal padding */
+    border: none;  /* remove default border */
+    cursor: pointer;  /* change cursor to pointer when hovering */
+    margin-top: 20px; /* added this line to add space between the button and the banner */
+    margin-bottom:  50px;
+    border-radius: 10px;  /* added this line to round the corners */
+    font-size: 20px;  /* added this line to increase the font size */
+  }
+  
+  .center-button:hover {
+    background-color: darkblue;  /* change color when hovering */
+  }
+  

@@ -45,12 +45,12 @@
   padding-bottom: 30px;
 }
 .testPage1 .question_img {
-  max-height: 700px; /* or any other value that fits your needs */
+  max-height: 600px; /* or any other value that fits your needs */
   width: auto; /* to maintain the aspect ratio */
 }
 
 .testPage1 .question_container .number {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .testPage1 .question_container .question {
