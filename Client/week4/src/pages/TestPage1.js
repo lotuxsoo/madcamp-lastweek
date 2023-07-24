@@ -87,7 +87,7 @@ function TestPage1() {
               <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
               <input
                 type="radio"
-                name="question2-2"
+                name="question2"
                 id="choice2-2"
                 value="2"
                 required=""
