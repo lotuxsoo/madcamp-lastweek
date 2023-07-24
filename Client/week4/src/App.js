@@ -6,9 +6,8 @@ import TestPage2 from "./pages/TestPage2";
 import TestPage3 from "./pages/TestPage3";
 import ResultPage2 from "./pages/ResultPage2";
 import ResultPage from "./pages/ResultPage";
-import CoupangPage from "./pages/Coupang"
-import CoupangPage2 from "./pages/Coupang2"
-
+import CoupangPage from "./pages/Coupang";
+import CoupangPage2 from "./pages/Coupang2";
 
 function App() {
   return (

@@ -12,17 +12,27 @@ import question8Img from "../assets/test1-8-male.PNG";
 function TestPage1() {
   const navigate = useNavigate();
   const [showNextTest, setShowNextTest] = useState(0);
-  const refs = [createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef(), createRef()];
+  const refs = [
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+    createRef(),
+  ];
 
   const getInputValue = () => {
     const inputValue1 = question1;
-    const inputValue2 = question2
-    const inputValue3 = question3
-    const inputValue4 = question4
-    const inputValue5 = question5
-    const inputValue6 = question6
-    const inputValue7 = question7
-    const inputValue8 = question8
+    const inputValue2 = question2;
+    const inputValue3 = question3;
+    const inputValue4 = question4;
+    const inputValue5 = question5;
+    const inputValue6 = question6;
+    const inputValue7 = question7;
+    const inputValue8 = question8;
 
     console.log(`Input 1 value: ${inputValue1}`);
     console.log(`Input 2 value: ${inputValue2}`);
@@ -34,8 +44,7 @@ function TestPage1() {
     console.log(`Input 8 value: ${inputValue8}`);
   };
   const goToNext = () => {
-    
-    const currentQuestionState = eval('question' + (showNextTest + 1));
+    const currentQuestionState = eval("question" + (showNextTest + 1));
     if (currentQuestionState === "") {
       alert("정답을 선택해주세요");
     } else {
@@ -60,14 +69,13 @@ function TestPage1() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-     
-    const currentQuestionState = eval('question' + (showNextTest + 1));
+
+    const currentQuestionState = eval("question" + (showNextTest + 1));
     if (currentQuestionState === "") {
       alert("정답을 선택해주세요");
-    }
-    else{
+    } else {
       getInputValue();
-    navigate('/coupang');
+      navigate("/coupang");
     }
   };
 
@@ -120,7 +128,9 @@ function TestPage1() {
           </div>
           <div className="test" ref={refs[1]}>
             <div className="question_container">
-              <h3 className="number">2. 다음 중 소개팅 만남 장소로 가장 적절한 것은?</h3>
+              <h3 className="number">
+                2. 다음 중 소개팅 만남 장소로 가장 적절한 것은?
+              </h3>
               <img className="question_img" src={question2Img} alt="img" />
             </div>
             <div className="answer">
@@ -171,7 +181,9 @@ function TestPage1() {
           </div>
           <div className="test" ref={refs[2]}>
             <div className="question_container">
-              <h3 className="number">3. 처음으로 그녀에게 건낼 말로 가장 적절한 것은?</h3>
+              <h3 className="number">
+                3. 처음으로 그녀에게 건낼 말로 가장 적절한 것은?
+              </h3>
               <img className="question_img" src={question3Img} alt="img" />
             </div>
             <div className="answer">
@@ -223,7 +235,9 @@ function TestPage1() {
 
           <div className="test" ref={refs[3]}>
             <div className="question_container">
-              <h3 className="number">4. 다음 대화에서 여자의 말의 의미와 가장 가까운 것은?</h3>
+              <h3 className="number">
+                4. 다음 대화에서 여자의 말의 의미와 가장 가까운 것은?
+              </h3>
               <img className="question_img" src={question4Img} alt="img" />
             </div>
             <div className="answer">
@@ -251,7 +265,6 @@ function TestPage1() {
               >
                 당신이 마음에 든다.
               </button>
-
             </div>
             <div
               className="btn_wrap"
@@ -268,7 +281,9 @@ function TestPage1() {
 
           <div className="test" ref={refs[4]}>
             <div className="question_container">
-              <h3 className="number">5. 여자의 칭찬에 대한 반응으로 가장 적절한 것은?</h3>
+              <h3 className="number">
+                5. 여자의 칭찬에 대한 반응으로 가장 적절한 것은?
+              </h3>
               <img className="question_img" src={question5Img} alt="img" />
             </div>
             <div className="answer">
@@ -320,7 +335,9 @@ function TestPage1() {
 
           <div className="test" ref={refs[5]}>
             <div className="question_container">
-              <h3 className="number">6. 아래 질문에 대한 대답으로 가장 올바른 것은?</h3>
+              <h3 className="number">
+                6. 아래 질문에 대한 대답으로 가장 올바른 것은?
+              </h3>
               <img className="question_img" src={question6Img} alt="img" />
             </div>
             <div className="answer">
@@ -372,7 +389,9 @@ function TestPage1() {
 
           <div className="test" ref={refs[6]}>
             <div className="question_container">
-              <h3 className="number">7. 대화가 끊겼을 때 대처방안으로 그나마 적절한 것은?</h3>
+              <h3 className="number">
+                7. 대화가 끊겼을 때 대처방안으로 그나마 적절한 것은?
+              </h3>
               <img className="question_img" src={question7Img} alt="img" />
             </div>
             <div className="answer">
@@ -424,7 +443,9 @@ function TestPage1() {
 
           <div className="test" ref={refs[7]}>
             <div className="question_container">
-              <h3 className="number">8. 다음 중 소개팅 매너가 가장 아닌 것은?</h3>
+              <h3 className="number">
+                8. 다음 중 소개팅 매너가 가장 아닌 것은?
+              </h3>
               <img className="question_img" src={question8Img} alt="img" />
             </div>
             <div className="answer">
@@ -468,7 +489,7 @@ function TestPage1() {
               <button type="button" className="prev_btn" onClick={goToPrev}>
                 이 전
               </button>
-              <button   className="submit_btn"  >제 출</button>
+              <button className="submit_btn">제 출</button>
             </div>
           </div>
         </form>
