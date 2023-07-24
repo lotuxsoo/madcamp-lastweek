@@ -2,6 +2,9 @@
 import React, { useState, createRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/test1_form.css";
+import question1Img from '../assets/test1-1-male.PNG';
+import question2Img from '../assets/test1-2-male.PNG';
+import question3Img from '../assets/test1-3-male.png';
 
 function TestPage1() {
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ function TestPage1() {
   };
 
   const goToPrev = () => {
-    if(showNextTest > 0){
+    if (showNextTest > 0) {
       setShowNextTest(showNextTest - 1); // decrease the state by 1 when prev button is clicked
     }
   };
@@ -39,30 +42,30 @@ function TestPage1() {
           <div className="test" ref={refs[0]}>
             <div className="question_container">
               <h3 className="number">1/10</h3>
-              <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
+              <img className="question_img" src={question1Img} alt="img" />
             </div>
             <div className="answer">
-              <input
-                type="radio"
-                name="question1"
-                id="choice1-1"
+              <button
+                className={question1 === 1 ? "selected" : ""}
                 value="1"
-                required=""
-                onChange={() => setQuestion1(1)}
-              />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
-              <input
-                type="radio"
-                name="question1"
-                id="choice1-2"
+                onClick={() => setQuestion1(1)}
+              >
+                아니에요! 다음에 만나면 말 놔요 ㅋㅋ
+              </button>
+              <button
+                className={question1 === 2 ? "selected" : ""}
                 value="2"
-                required=""
-                onChange={() => setQuestion1(2)}
-              />
-              <label for="choice-2">
-                2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
-                Network, Ubuntu, CentOS, 부하분산, etc)
-              </label>
+                onClick={() => setQuestion1(2)}
+              >
+                그래 ㅋㅋ 언제 시간 괜찮아?
+              </button>
+              <button
+                className={question1 === 3 ? "selected" : ""}
+                value="3"
+                onClick={() => setQuestion1(3)}
+              >
+                네 그럴게요 ㅎㅎ 일정은 언제가 좋으세요?
+              </button>
             </div>
             <div className="btn_wrap">
               <button className="next_btn" onClick={goToNext}>
@@ -73,75 +76,81 @@ function TestPage1() {
           <div className="test" ref={refs[1]}>
             <div className="question_container">
               <h3 className="number">2/10</h3>
-              <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
+              <img className="question_img" src={question2Img} alt="img" />
             </div>
             <div className="answer">
-              <input
-                type="radio"
-                name="question2"
-                id="choice2-1"
+              <button
+                className={question2 === 1 ? "selected" : ""}
                 value="1"
-                required=""
-                onChange={() => setQuestion2(1)}
-              />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
-              <input
-                type="radio"
-                name="question2"
-                id="choice2-2"
+                onClick={() => setQuestion2(1)}
+              >
+                정겨운 분위기의 삼겹살집
+              </button>
+              <button
+                className={question2 === 2 ? "selected" : ""}
                 value="2"
-                required=""
-                onChange={() => setQuestion2(2)}
-              />
-              <label for="choice-2">
-                2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
-                Network, Ubuntu, CentOS, 부하분산, etc)
-              </label>
-            </div>
-            <div className="btn_wrap">
-              <button className="next_btn" onClick={goToNext}>
-                다 음
+                onClick={() => setQuestion2(2)}
+              >
+                정갈한 한 상의 한정식집
+              </button>
+              <button
+                className={question2 === 3 ? "selected" : ""}
+                value="3"
+                onClick={() => setQuestion2(3)}
+              >
+                대기는 있지만, 맛이 보장된 유명 맛집
+              </button>
+              <button
+                className={question2 === 4 ? "selected" : ""}
+                value="4"
+                onClick={() => setQuestion2(4)}
+              >
+                가격이 매우 비싼 고급 레스토랑
               </button>
             </div>
-            <div className="btn_wrap btn_sort">
+            <div className="btn_wrap" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button className="prev_btn" onClick={goToPrev}>이 전</button>
+              <button className="next_btn" onClick={goToNext}>다 음</button>
             </div>
           </div>
           <div className="test" ref={refs[2]}>
             <div className="question_container">
               <h3 className="number">3/10</h3>
-              <h3 className="question">당신이 가장 재밌었던 수업은?</h3>
+              <img className="question_img" src={question3Img} alt="img" />
             </div>
             <div className="answer">
-              <input
-                type="radio"
-                name="question3"
-                id="choice3-1"
+              <button
+                className={question3 === 1 ? "selected" : ""}
                 value="1"
-                required=""
-                onChange={() => setQuestion3(1)}
-              />
-              <label for="choice-1">1. 게임 개발(유니티, 언리얼, Pygame)</label>
-              <input
-                type="radio"
-                name="question3"
-                id="choice3-2"
+                onClick={() => setQuestion3(1)}
+              >
+                사진보다 실물이 더 이쁘시네요.
+              </button>
+              <button
+                className={question3 === 2 ? "selected" : ""}
                 value="2"
-                required=""
-                onChange={() => setQuestion3(2)}
-              />
-              <label for="choice-2">
-                2. 백엔드 또는 인프라(C계열-닷넷, JAVA-Spring, Python-Django,
-                Network, Ubuntu, CentOS, 부하분산, etc)
-              </label>
-            </div>
-            <div className="btn_wrap">
-              <button className="next_btn" onClick={goToNext}>
-                다 음
+                onClick={() => setQuestion3(2)}
+              >
+                얘기 많이 들었어요. 반가워요.
+              </button>
+              <button
+                className={question3 === 3 ? "selected" : ""}
+                value="3"
+                onClick={() => setQuestion3(3)}
+              >
+                어색한데 소주나 한잔 할까요?
+              </button>
+              <button
+                className={question3 === 4 ? "selected" : ""}
+                value="4"
+                onClick={() => setQuestion3(4)}
+              >
+                날씨 더운데 오시느라 힘들지 않으셨어요?
               </button>
             </div>
-            <div className="btn_wrap btn_sort">
+            <div className="btn_wrap" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button className="prev_btn" onClick={goToPrev}>이 전</button>
+              <button className="next_btn" onClick={goToNext}>다 음</button>
             </div>
           </div>
 
