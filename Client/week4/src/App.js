@@ -4,7 +4,7 @@ import MainPage from "./pages/MainPage";
 import TestPage1 from "./pages/TestPage1";
 import TestPage2 from "./pages/TestPage2";
 import TestPage3 from "./pages/TestPage3";
-import ResultPage from "./pages/ResultPage";
+import ResultPage2 from "./pages/ResultPage2";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/test1" element={<TestPage1 />} />
         <Route path="/test2" element={<TestPage2 />} />
         <Route path="/test3" element={<TestPage3 />} />
-        <Route path="/result" element={<ResultPage />} />
+        <Route path="/result2" element={<ResultPage2 />} />
       </Routes>
     </Router>
   );

@@ -80,8 +80,20 @@
   justify-content: space-between;
 }
 
-.testPage1 button,
+.testPage1 .next_btn,
+.testPage1 .prev_btn,
 .testPage1 .submit_btn {
+  background-color: #049dd9;
+}
+
+.testPage1 .next_btn:hover,
+.testPage1 .prev_btn:hover,
+.testPage1 .submit_btn:hover {
+  background-color: #fff;
+  color: #049dd9;
+}
+
+.testPage1 button {
   width: 100px;
   height: 40px;
   padding: 5px;
@@ -94,20 +106,18 @@
   color: #fff;
 }
 
-.testPage1 button:hover,
-.testPage1 .submit_btn:hover {
+.testPage1 button:hover {
   background-color: #fff;
-  color: #9b65f8;
+  color: #f29985;
 }
 
 .answer button {
   display: block;
   margin-bottom: 10px;
   width: 600px;
-
   /* Add other styles as needed */
 }
 
 .answer .selected {
-  background-color: lightgray;
+  /* background-color: lightgray; */
 }
