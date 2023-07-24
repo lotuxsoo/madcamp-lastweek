@@ -15,7 +15,7 @@
 
 
 .testPage1 {
-    background-color: #e994f4;
+    background-color: #ecc5f1;
     color: #000;
     font-family: "NEXON Lv1 Gothic OTF";
     min-height: 100vh;
@@ -34,6 +34,7 @@
 .testPage1 .test {
     max-width: 600px;
     padding-top: 50px;
+    margin-bottom: 100px; 
 }
 
 .testPage1 .question_container {
@@ -43,8 +44,11 @@
     font-size: 30px;
     line-height: 1.3;
     padding-bottom: 30px;
-    margin-top: 50px;
 }
+.testPage1 .question_img {
+    max-height: 700px;  /* or any other value that fits your needs */
+    width: auto;  /* to maintain the aspect ratio */
+  }
 
 .testPage1 .question_container .number {
     padding-bottom: 30px;
@@ -92,5 +96,17 @@
 
 .testPage1 button:hover, .testPage1 .submit_btn:hover {
     background-color: #fff;
-    color: #7F47DD
+    color: #9b65f8
 }
+
+.answer button {
+    display: block;
+    margin-bottom: 10px;
+    width: 600px;
+
+    /* Add other styles as needed */
+  }
+  
+  .answer .selected {
+    background-color: lightgray;
+  }
