@@ -120,7 +120,40 @@ def test1(request):
         }    
 
         return JsonResponse(response_data)
+    
+    
+def test4(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        print("Received data:", data)  # 콘솔에 데이터 출력
 
+        value_mapping = {
+            "inputValue1": {1: 12.5, 2: 8, 3: 4},
+            "inputValue2": {1: 2, 2: 8, 3: 12.5, 4: 4},
+            "inputValue3": {1: 8, 2: 8, 3: 4, 4: 12.5},
+            "inputValue4": {1: 4, 2: 12.5, 3: 4},
+            "inputValue5": {1: 2, 2: 2, 3: 12.5, 4: 8},
+            "inputValue6": {1: 8, 2: 2, 3: 2, 4: 12.5},
+            "inputValue7": {1: 2, 2: 2, 3: 4, 4: 12.5},
+            "inputValue8": {1: 8, 2: 0, 3: 4, 4: 12.5},
+        }
+
+        result_value = sum(value_mapping[key][value] for key, value in data.items())
+        response_data = {"message": f"소개팅 성공확률: {result_value}%"}  # 응답 데이터
+        print(response_data)
+        return JsonResponse(response_data, safe=False)
+    else:
+        return JsonResponse({"error": "Only POST method is supported"}, status=400)
+
+        response_data = {
+            'developer': {
+                'name': best_developer.name,
+                'count': best_developer.count
+            },
+            'counter': counter,
+        }    
+
+        return JsonResponse(response_data)
 
 
 # @api_view(['GET'])

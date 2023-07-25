@@ -18,7 +18,7 @@ function TestPage4() {
 
   const sendToDjango = async (data) => {
     try {
-      const response = await fetch('http://localhost:8000/test1/', {
+      const response = await fetch('http://localhost:8000/test4/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ function TestPage4() {
     }
     else{
       getInputValue();
-    navigate('/coupang');
+    navigate('/coupang4');
     }
   };
 
@@ -426,7 +426,7 @@ function TestPage4() {
 
           <div className="test" ref={refs[6]}>
             <div className="question_container">
-              <h3 className="number">최근 방영하고 있는 하트시그널4의 장면중 하나이다. 다음 중 인물의 대사에 알맞은 것은?</h3>
+              <h3 className="number">7. 최근 방영하고 있는 하트시그널4의 장면중 하나이다. 다음 중 인물의 대사에 알맞은 것은?</h3>
               <img className="question_img" src={question7Img} alt="img" />
             </div>
             <div className="answer">
