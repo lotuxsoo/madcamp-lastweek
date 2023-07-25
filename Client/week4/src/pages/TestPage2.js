@@ -55,19 +55,17 @@ function TestPage2() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const currentQuestionState = eval('question' + (showNextTest + 1));
+    const currentQuestionState = eval("question" + (showNextTest + 1));
     if (currentQuestionState === "") {
       alert("정답을 선택해주세요");
-    }
-    else{
+    } else {
       getInputValue();
       navigate("/Coupang2");
     }
   };
 
   const goToNext = () => {
-    
-    const currentQuestionState = eval('question' + (showNextTest + 1));
+    const currentQuestionState = eval("question" + (showNextTest + 1));
     if (currentQuestionState === "") {
       alert("정답을 선택해주세요");
     } else {
@@ -80,8 +78,6 @@ function TestPage2() {
       setShowNextTest(showNextTest - 1); // decrease the state by 1 when prev button is clicked
     }
   };
-
-  
 
   useEffect(() => {
     if (showNextTest < refs.length) {
@@ -723,9 +719,7 @@ function TestPage2() {
               <button className="prev_btn" type="button" onClick={goToPrev}>
                 이 전
               </button>
-              <button className="submit_btn" >
-                제 출
-              </button>
+              <button className="submit_btn">제 출</button>
             </div>
           </div>
 
