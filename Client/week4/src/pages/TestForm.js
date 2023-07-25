@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/test2_form.css";
 
@@ -7,7 +7,7 @@ function TestForm() {
   const [questions, setQuestions] = useState([]);
   const [choices, setChoices] = useState([]);
   const [answers, setAnswers] = useState({});
-  const [showNextTest, setShowNextTest] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:8000/questions/")
@@ -26,24 +26,26 @@ function TestForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // console.log(answers);
-    // navigate("/result2/");
-  };
-
   const goToNext = () => {
-    const currentQuestionState = eval("question" + (showNextTest + 1));
-    if (currentQuestionState === "") {
+    if (answers[questions[currentQuestionIndex].number] === undefined) {
       alert("정답을 선택해주세요");
     } else {
-      setShowNextTest(showNextTest + 1);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const goToPrev = () => {
-    if (showNextTest > 0) {
-      setShowNextTest(showNextTest - 1); // decrease the state by 1 when prev button is clicked
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (answers[questions[currentQuestionIndex].number] === undefined) {
+      alert("정답을 선택해주세요");
+    } else {
+      navigate("/result2/");
     }
   };
 
@@ -52,8 +54,14 @@ function TestForm() {
       <div className="survey">
         <form onSubmit={handleSubmit}>
           {questions.map((question, index) => (
-            <div className="test">
-              <div className="question_container" key={question.number}>
+            <div
+              className="test"
+              key={question.number}
+              style={{
+                display: currentQuestionIndex === index ? "block" : "none",
+              }}
+            >
+              <div className="question_container">
                 <h3 className="question">{`${question.number}. ${question.content}`}</h3>
               </div>
               {choices
@@ -62,81 +70,36 @@ function TestForm() {
                   <div className="answer" key={choice.id}>
                     <input
                       type="radio"
-                      name={`question-${question.number}`}
+                      name={`question-${question.id}`} // use question.id instead of question.number
                       id={`choice-${choice.id}`}
-                      value={choice.developer}
-                      onChange={(e) => handleChange(e, question.number)}
+                      value={choice.id}
+                      onChange={(e) => handleChange(e, question.id)} // pass question.id instead of question.number
                     />
                     <label
                       htmlFor={`choice-${choice.id}`}
                     >{`${choice.content}`}</label>
                   </div>
                 ))}
-              <hr />
-
-              {showNextTest === index && (
-                <div className="btn_wrap">
-                  {index === 0 && (
-                    <button
-                      className="next_btn"
-                      type="button"
-                      onClick={goToNext}
-                    >
-                      다음
-                    </button>
-                  )}
-
-                  {index > 0 && index < questions.length - 1 && (
-                    <div
-                      className="btn_wrap"
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <button
-                        className="prev_btn"
-                        type="button"
-                        onClick={goToPrev}
-                      >
-                        이전
-                      </button>
-                      <button
-                        className="next_btn"
-                        type="button"
-                        onClick={goToNext}
-                      >
-                        다음
-                      </button>
-                    </div>
-                  )}
-
-                  {index === questions.length - 1 && (
-                    <div
-                      className="btn_wrap"
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <button
-                        className="prev_btn"
-                        type="button"
-                        onClick={goToPrev}
-                      >
-                        이전
-                      </button>
-                      <input type="submit" value="제출하기" />
-                    </div>
-                  )}
-                </div>
-              )}
+              <div className="btn_wrap">
+                {index > 0 && (
+                  <button className="prev_btn" type="button" onClick={goToPrev}>
+                    이전
+                  </button>
+                )}
+                {index < questions.length - 1 ? (
+                  <button className="next_btn" type="button" onClick={goToNext}>
+                    다음
+                  </button>
+                ) : (
+                  <button className="submit_btn">제 출</button>
+                )}
+              </div>
             </div>
           ))}
-          {/* <input type="submit" value="제출하기" /> */}
         </form>
       </div>
     </div>
   );
 }
+
 export default TestForm;

@@ -106,7 +106,7 @@ def test1(request):
 
         result_value = sum(value_mapping[key][value] for key, value in data.items())
         response_data = {"message": f"소개팅 성공확률: {result_value}%"}  # 응답 데이터
-
+        print(response_data)
         return JsonResponse(response_data, safe=False)
     else:
         return JsonResponse({"error": "Only POST method is supported"}, status=400)
