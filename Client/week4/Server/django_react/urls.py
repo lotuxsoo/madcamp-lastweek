@@ -7,6 +7,7 @@ urlpatterns = [
     path('form/', views.form),
     path('result/', views.result),
     path('test1/', views.test1),
+    path('test4/', views.test4),
 
     path("hello/", views.helloAPI),
     path('developers/', views.developer_list),
