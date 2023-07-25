@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Developer(models.Model):
     name = models.CharField(max_length=50)
-    count = models.IntegerField(default=0)
+    count = models.IntegerField(default=0) #결과값
     
     def __str__(self):
         return self.name
