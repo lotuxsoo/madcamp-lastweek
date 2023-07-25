@@ -2,7 +2,7 @@ export const shareKakao = (route, title) => { // url이 id값에 따라 변경�
     if (window.Kakao) {
       const kakao = window.Kakao;
       if (!kakao.isInitialized()) {
-        kakao.init(<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js" integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" crossorigin="anonymous"></script>); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+        kakao.init("sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh" ); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
       }
   
       kakao.Link.sendDefault({

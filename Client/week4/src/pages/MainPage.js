@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect }  from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/form.css"
 
 const MainPage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.backgroundColor = '#0D0D0D';
+    return () => {
+      document.body.style.backgroundColor = null; // cleanup function to reset
+    };
+  }, []);
   const goTo1 = () => {
     navigate("/test1"); // '/next-path'를 원하는 경로로 변경하세요.
   };
@@ -13,6 +20,10 @@ const MainPage = () => {
   const goTo3 = () => {
     navigate("/test3"); // '/next-path'를 원하는 경로로 변경하세요.
   };
+  const goTo4 = () => {
+    navigate("/test4"); // '/next-path'를 원하는 경로로 변경하세요.
+  };
+
 
   return (
     <div className = "main" style={{ backgroundColor: '#0D0D0D', height: '100vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
@@ -29,7 +40,7 @@ const MainPage = () => {
         <button className = "test3_button" style={{ marginRight: '20px' }} type="button" onClick={goTo3}>
           test3
         </button>
-        <button className = "test4_button" type="button" onClick={goTo3}>
+        <button className = "test4_button" type="button" onClick={goTo4}>
           test4
         </button>
       </div>

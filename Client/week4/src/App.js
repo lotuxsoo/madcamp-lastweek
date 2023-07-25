@@ -9,6 +9,7 @@ import ResultPage from "./pages/ResultPage";
 import CoupangPage from "./pages/Coupang";
 import CoupangPage2 from "./pages/Coupang2";
 import TestForm from "./pages/TestForm";
+import TestPage4 from "./pages/TestPage4";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/test1" element={<TestPage1 />} />
         <Route path="/test2" element={<TestForm />} />
         <Route path="/test3" element={<TestPage3 />} />
+        <Route path="/test4" element={<TestPage4 />} />
         <Route path="/result2" element={<ResultPage2 />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/coupang" element={<CoupangPage />} />
