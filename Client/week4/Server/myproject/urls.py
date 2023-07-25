@@ -1,11 +1,8 @@
 from django.contrib import admin
-from django.urls import path
-from django_react import views
+from django.urls import path,include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('form/', views.form),
-    path('result/', views.result)
+    path('', include('django_react.urls')),
 ]
-#path('', include('django_react.urls')),
