@@ -1,13 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GlobalStateProvider } from './pages/GlobalStateProvider'; // 이 줄을 추가합니다.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <GlobalStateProvider>  {/* 이 줄을 추가합니다. */}
+      <App />
+    </GlobalStateProvider>  {/* 이 줄을 추가합니다. */}
   </React.StrictMode>
 );
 
