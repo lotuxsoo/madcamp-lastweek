@@ -29,17 +29,17 @@ const ResultPage = () => {
   return (
     <div style={{ position: 'relative', backgroundColor: '#0D0D0D', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <div style={{ position: 'absolute', top: '10px', right: '10px', color: 'white', textAlign: 'right' }}>
-        <button style={{ backgroundColor: '#0D0D0D',width: '60px', height: '50px' , border: 'none' , marginRight:'10px' }} onClick={() => shareKakao('http://localhost:3000/result', '소개팅 테스트')}>
-          <img className="w-12 h-12"style={{ width: '100%',  height: '100%' }} src={kakaoLogo} alt={"Kakao Logo"} />
+        <button style={{ backgroundColor: '#0D0D0D', width: '60px', height: '50px', border: 'none', marginRight: '10px' }} onClick={() => shareKakao('http://localhost:3000/result', '소개팅 테스트')}>
+          <img className="w-12 h-12" style={{ width: '100%', height: '100%' }} src={kakaoLogo} alt={"Kakao Logo"} />
         </button>
       </div>
-      
-  <span style={{ color: 'white', fontFamily: 'Arial', fontSize: 50 }}>{message}:</span>
-  <span style={{ color: 'red', fontFamily: 'Arial', fontSize: 70 }}>{percentage}</span>
+
+      <span style={{ color: 'white', fontFamily: 'Arial', fontSize: 50 }}>{message}:</span>
+      <span style={{ color: 'red', fontFamily: 'Arial', fontSize: 70 }}>{percentage}</span>
 
       {percentageValue <= 50 && (
         <iframe
-        style={{marginTop: '100px'}}
+          style={{ marginTop: '100px' }}
           width="1200"
           height="700"
           src="https://www.youtube.com/embed/vsJGZOnMVt0"
@@ -48,12 +48,12 @@ const ResultPage = () => {
           allowFullScreen>
         </iframe>
       )}
-      
+
       {percentageValue > 50 && (
         <div style={{ position: 'relative', backgroundColor: '#0D0D0D', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-        <img style={{marginTop: '100px'}} src={resultImg1} alt="img" />
-        <img style={{marginTop: '100px'}} src={resultImg2} alt="img" />
-        <img style={{marginTop: '100px', marginBottom: '100px'}} src={resultImg3} alt="img" />
+          <img style={{ marginTop: '100px' }} src={resultImg1} alt="img" />
+          <img style={{ marginTop: '100px' }} src={resultImg2} alt="img" />
+          <img style={{ marginTop: '100px', marginBottom: '100px' }} src={resultImg3} alt="img" />
         </div>
       )}
     </div>

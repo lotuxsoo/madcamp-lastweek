@@ -126,20 +126,20 @@ def test4(request):
     if request.method == "POST":
         data = json.loads(request.body)
         print("Received data:", data)  # 콘솔에 데이터 출력
-
-        value_mapping = {
-            "inputValue1": {1: 12.5, 2: 8, 3: 4},
-            "inputValue2": {1: 2, 2: 8, 3: 12.5, 4: 4},
-            "inputValue3": {1: 8, 2: 8, 3: 4, 4: 12.5},
-            "inputValue4": {1: 4, 2: 12.5, 3: 4},
-            "inputValue5": {1: 2, 2: 2, 3: 12.5, 4: 8},
-            "inputValue6": {1: 8, 2: 2, 3: 2, 4: 12.5},
-            "inputValue7": {1: 2, 2: 2, 3: 4, 4: 12.5},
-            "inputValue8": {1: 8, 2: 0, 3: 4, 4: 12.5},
+        correct_answers = {
+            "inputValue1": 2,
+            "inputValue2": 4,
+            "inputValue3": 3,
+            "inputValue4": 2,
+            "inputValue5": 4,
+            "inputValue6": 2,
+            "inputValue7": 3,
+            "inputValue8": 1,
         }
+        
 
-        result_value = sum(value_mapping[key][value] for key, value in data.items())
-        response_data = {"message": f"소개팅 성공확률: {result_value}%"}  # 응답 데이터
+        correct_count = sum(data[key] == correct_answers[key] for key in data.keys())
+        response_data = {"message": correct_count}  # 응답 데이터
         print(response_data)
         return JsonResponse(response_data, safe=False)
     else:
