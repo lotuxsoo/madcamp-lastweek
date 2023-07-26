@@ -77,6 +77,34 @@
 .btn_sort {
   justify-content: space-between;
 }
+@keyframes buttonAnimation1 {
+  0%   {background-color: #F27777;}
+  25%  {background-color: #F2E49B;}
+  50%  {background-color: #1FBF92;}
+  75%  {background-color: #140DD9;}
+  100% {background-color: #F27777;}
+}
+@keyframes buttonAnimation2 {
+  0%   {background-color: #F2E49B;}
+  25%  {background-color: #1FBF92;}
+  50%  {background-color: #140DD9;}
+  75%  {background-color: #F27777;}
+  100% {background-color: #F2E49B;}
+}
+@keyframes buttonAnimation4 {
+  0%   {background-color: #1FBF92;}
+  25%  {background-color: #140DD9;}
+  50%  {background-color: #F27777;}
+  75%  {background-color: #F2E49B;}
+  100% {background-color: #1FBF92;}
+}
+@keyframes buttonAnimation3 {
+  0%   {background-color: #140DD9;}
+  25%  {background-color: #F27777;}
+  50%  {background-color: #F2E49B;}
+  75%  {background-color: #1FBF92;}
+  100% {background-color: #140DD9;}
+}
 .test1_button {
   width: 400px;
   height: 400px;
@@ -89,6 +117,9 @@
   cursor: pointer;
   color: #0D0D0D;
   font-size: 30px;
+  animation-name: buttonAnimation1;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 .test2_button {
   width: 400px;
@@ -102,6 +133,9 @@
   cursor: pointer;
   color: #0D0D0D;
   font-size: 30px;
+  animation-name: buttonAnimation2;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 .test3_button {
   width: 400px;
@@ -115,6 +149,9 @@
   cursor: pointer;
   color: #0D0D0D;
   font-size: 30px;
+  animation-name: buttonAnimation3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 .test4_button {
   width: 400px;
@@ -128,33 +165,34 @@
   cursor: pointer;
   color: #0D0D0D;
   font-size: 30px;
+  animation-name: buttonAnimation4;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 .test1_button:hover
  {
-  background-color: #9a9797;
   color: #ffffff;
   font-family: "NEXON Lv1 Gothic OTF";
 }
 
 .test2_button:hover
  {
-  background-color: #9a9797;
   color: #ffffff;
   font-family: "NEXON Lv1 Gothic OTF";
 }
 .test3_button:hover
  {
-  background-color: #9a9797;
   color: #ffffff;
   font-family: "NEXON Lv1 Gothic OTF";
 }
 .test4_button:hover
  {
-  background-color: #9a9797;
   color: #ffffff;
   font-family: "NEXON Lv1 Gothic OTF";
 }
+
+
 
 h1.main-title {
   font-family: "GmarketSansMedium";

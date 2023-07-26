@@ -91,6 +91,40 @@ def test1(request):
 
         return JsonResponse(response_data)
 
+def test4(request): 
+    if request.method == "POST":
+        data = json.loads(request.body)
+        print("Received data:", data)  # 콘솔에 데이터 출력
+        correct_answers = {
+            "inputValue1": 2,
+            "inputValue2": 4,
+            "inputValue3": 3,
+            "inputValue4": 2,
+            "inputValue5": 4,
+            "inputValue6": 2,
+            "inputValue7": 3,
+            "inputValue8": 1,
+        }
+        
+
+        correct_count = sum(data[key] == correct_answers[key] for key in data.keys())
+        response_data = {"message": correct_count}  # 응답 데이터
+        print(response_data)
+        return JsonResponse(response_data, safe=False)
+    else:
+        return JsonResponse({"error": "Only POST method is supported"}, status=400)
+
+        response_data = {
+            'developer': {
+                'name': best_developer.name,
+                'count': best_developer.count
+            },
+            'counter': counter,
+        }    
+
+        return JsonResponse(response_data)
+
+        
 def test2(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -128,6 +162,24 @@ def test2(request):
         return JsonResponse({"max_key": max_key}, safe=False)
     else:
         return JsonResponse({"error": "Only POST method is supported"}, status=400)
+
+        correct_count = sum(data[key] == correct_answers[key] for key in data.keys())
+        response_data = {"message": correct_count}  # 응답 데이터
+        print(response_data)
+        return JsonResponse(response_data, safe=False)
+    else:
+        return JsonResponse({"error": "Only POST method is supported"}, status=400)
+
+        response_data = {
+            'developer': {
+                'name': best_developer.name,
+                'count': best_developer.count
+            },
+            'counter': counter,
+        }    
+
+        return JsonResponse(response_data)
+
 
 
 @api_view(['POST'])
