@@ -12,4 +12,9 @@ urlpatterns = [
     # path('developers/', views.developer_list),
     # path('questions/', views.question_list),
     # path('choices/', views.choice_list),
+    path('test4/', views.test4),
+    path("hello/", views.helloAPI),
+    path('developers/', views.developer_list),
+    path('questions/', views.question_list),
+    path('choices/', views.choice_list),
 ]

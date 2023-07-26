@@ -18,7 +18,7 @@ function TestPage4() {
 
   const sendToDjango = async (data) => {
     try {
-      const response = await fetch('http://localhost:8000/test1/', {
+      const response = await fetch('http://localhost:8000/test4/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ function TestPage4() {
     }
     else{
       getInputValue();
-    navigate('/coupang');
+    navigate('/coupang4');
     }
   };
 
@@ -115,7 +115,7 @@ function TestPage4() {
                 value="1"
                 onClick={() => setQuestion1(1)}
               >
-                아이브의 키치요
+                네이버 지도 보세요
               </button>
               <button
                 type="button"
@@ -131,7 +131,7 @@ function TestPage4() {
                 value="3"
                 onClick={() => setQuestion1(3)}
               >
-                뉴진스의 디토요
+                뉴진스의 힙합보이요
               </button>
               <button
                 type="button"
@@ -139,7 +139,7 @@ function TestPage4() {
                 value="4"
                 onClick={() => setQuestion1(4)}
               >
-                아이들의 퀸카요
+                저기 사거리에서 왼쪽으로 가시면돼요
               </button>
               <button
                 type="button"
@@ -147,7 +147,7 @@ function TestPage4() {
                 value="5"
                 onClick={() => setQuestion1(5)}
               >
-                뉴진스의 슈퍼사이요
+                뉴진스의 하입걸이요
               </button>
             </div>
             <div className="btn_wrap">
@@ -168,7 +168,7 @@ function TestPage4() {
                 value="1"
                 onClick={() => setQuestion2(1)}
               >
-                와우~ 멋지다 연준아!
+                와우~ 멋지다 연진아!
               </button>
               <button
                 type="button"
@@ -176,7 +176,7 @@ function TestPage4() {
                 value="2"
                 onClick={() => setQuestion2(2)}
               >
-                브라보~ 멋지다 연준아!
+                와우~ 멋지다 연준아!
               </button>
               <button
                 type="button"
@@ -299,7 +299,7 @@ function TestPage4() {
               </button>
               <button
                 type="button"
-                className={question4 === 3 ? "selected" : ""}
+                className={question4 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion4(4)}
               >
@@ -358,6 +358,14 @@ function TestPage4() {
               >
                 운전 잘하는 사람
               </button>
+              <button
+                type="button"
+                className={question5 === 5 ? "selected" : ""}
+                value="5"
+                onClick={() => setQuestion5(5)}
+              >
+                나를 비싸게 여겨주는 사람
+              </button>
             </div>
             <div
               className="btn_wrap"
@@ -384,7 +392,7 @@ function TestPage4() {
                 value="1"
                 onClick={() => setQuestion6(1)}
               >
-                다나카 - 오이시쿠나레 모야모야뀽
+                다나카 - 오이시쿠나레 모에모에뀽
               </button>
               <button
                 type="button"
@@ -408,7 +416,7 @@ function TestPage4() {
                 value="4"
                 onClick={() => setQuestion6(4)}
               >
-                왕간다 - 나 비싸~
+                시미켄 - 스고이
               </button>
             </div>
             <div
@@ -426,7 +434,7 @@ function TestPage4() {
 
           <div className="test" ref={refs[6]}>
             <div className="question_container">
-              <h3 className="number">최근 방영하고 있는 하트시그널4의 장면중 하나이다. 다음 중 인물의 대사에 알맞은 것은?</h3>
+              <h3 className="number" style={{ textAlign: "center" }}>7. 최근 방영하고 있는 하트시그널4의 장면중 하나이다.  <br />다음 중 인물의 대사에 알맞은 것은?</h3>
               <img className="question_img" src={question7Img} alt="img" />
             </div>
             <div className="answer">
@@ -454,19 +462,12 @@ function TestPage4() {
               >
                 연하 어떄?
               </button>
+              
               <button
                 type="button"
                 className={question7 === 4 ? "selected" : ""}
                 value="4"
                 onClick={() => setQuestion7(4)}
-              >
-                손 어는 것도 추억이지~
-              </button>
-              <button
-                type="button"
-                className={question7 === 5 ? "selected" : ""}
-                value="5"
-                onClick={() => setQuestion7(5)}
               >
                 평소에? 아니면 오늘?
               </button>
@@ -504,7 +505,7 @@ function TestPage4() {
                 value="2"
                 onClick={() => setQuestion8(2)}
               >
-                연하 어때?
+                방금 뭐라고 하셨어요?
               </button>
               <button
                 type="button"
@@ -512,7 +513,7 @@ function TestPage4() {
                 value="3"
                 onClick={() => setQuestion8(3)}
               >
-                영차 좋았어~
+                저 MZ인데요?
               </button>
               <button
                 type="button"

@@ -8,7 +8,9 @@ import ResultPage2 from "./pages/ResultPage2";
 import ResultPage from "./pages/ResultPage";
 import CoupangPage from "./pages/Coupang";
 import CoupangPage2 from "./pages/Coupang2";
+import CoupangPage4 from "./pages/Coupang4";
 import TestPage4 from "./pages/TestPage4";
+import ResultPage4 from "./pages/ResultPage4";
 
 function App() {
   return (
@@ -21,8 +23,10 @@ function App() {
         <Route path="/test4" element={<TestPage4 />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/result2" element={<ResultPage2 />} />
+        <Route path="/result4" element={<ResultPage4 />} />
         <Route path="/coupang" element={<CoupangPage />} />
         <Route path="/coupang2" element={<CoupangPage2 />} />
+        <Route path="/coupang4" element={<CoupangPage4 />} />
       </Routes>
     </Router>
   );
