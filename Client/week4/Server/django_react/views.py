@@ -8,8 +8,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializers import DeveloperSerializer, QuestionSerializer, ChoiceSerializer
 
-# Create your views here.
-
 def test1(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -77,7 +75,8 @@ def test2(request):
         response_data = {"message": correct_count}  # 응답 데이터
         print(response_data)
         return JsonResponse(response_data, safe=False)
-    
+
+
     
 def test3(request):
     if request.method == "POST":
@@ -102,6 +101,7 @@ def test3(request):
     else:
         return JsonResponse({"error": "Only POST method is supported"}, status=400)
 
+
 def test4(request): 
     if request.method == "POST":
         data = json.loads(request.body)
@@ -124,5 +124,3 @@ def test4(request):
         return JsonResponse(response_data, safe=False)
     else:
         return JsonResponse({"error": "Only POST method is supported"}, status=400)
-
-    

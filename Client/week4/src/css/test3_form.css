@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.testPage3 {
+  background-color: #e9dff2;
+  color: #000;
+  font-family: "NEXON Lv1 Gothic OTF";
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.testPage3 .survey {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testPage3 .test {
+  max-width: 600px;
+  padding-top: 50px;
+  margin-bottom: 2000px;
+}
+
+.testPage3 .question_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  line-height: 1.3;
+  padding-bottom: 30px;
+}
+.testPage3 .question_img {
+  height: auto; /* or any other value that fits your needs */
+  width: 600px; /* to maintain the aspect ratio */
+}
+
+.testPage3 .question_container .number {
+  padding-bottom: 10px;
+}
+
+.testPage3 .question_container .question {
+  font-family: "GmarketSansMedium";
+}
+
+.testPage3 .answer {
+  font-size: 17px;
+  line-height: 1.3;
+  padding-bottom: 30px;
+}
+
+.testPage3 .answer .div {
+  padding-bottom: 15px;
+}
+
+.testPage3 .answer .input {
+  cursor: pointer;
+}
+
+.testPage3 .btn_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.testPage3 .btn_sort {
+  justify-content: space-between;
+}
+
+.testPage3 .next_btn,
+.testPage3 .prev_btn,
+.testPage3 .submit_btn {
+  background-color: #585859;
+  width: 100px;
+  height: 50px;
+}
+
+.testPage3 .next_btn:hover,
+.testPage3 .prev_btn:hover,
+.testPage3 .submit_btn:hover {
+  background-color: #fff;
+  color: #585859;
+}
+
+.testPage3 button {
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "NEXON Lv1 Gothic OTF";
+  background-color: #a673d9;
+  cursor: pointer;
+  color: #fff;
+}
+
+.testPage3 button:hover {
+  background-color: #fff;
+  color: #a673d9;
+}
+
+.answer button {
+  display: block;
+  margin-bottom: 10px;
+  width: 600px;
+  /* Add other styles as needed */
+}
+
+.answer .selected {
+  /* background-color: lightgray; */
+}
