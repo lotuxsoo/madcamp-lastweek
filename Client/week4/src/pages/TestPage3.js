@@ -49,7 +49,7 @@ function TestPage3() {
 
   const sendToDjango = async (data) => {
     try {
-      const response = await fetch("http://localhost:8000/test1/", {
+      const response = await fetch("http://localhost:8000/test3/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function TestPage3() {
       alert("정답을 선택해주세요");
     } else {
       getInputValue();
-      navigate("/coupang");
+      navigate("/coupang3");
     }
   };
 
@@ -139,9 +139,9 @@ function TestPage3() {
               </button>
               <button
                 type="button"
-                className={question1 === 3 ? "selected" : ""}
+                className={question1 === 4 ? "selected" : ""}
                 value="3"
-                onClick={() => setQuestion1(3)}
+                onClick={() => setQuestion1(4)}
               >
                 오늘 약속을 미루고 싶다.
               </button>

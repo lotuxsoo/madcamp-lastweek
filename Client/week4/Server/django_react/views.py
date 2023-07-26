@@ -84,14 +84,12 @@ def test3(request):
         print("Received data1:", data)  # 콘솔에 데이터 출력
 
         value_mapping = {
-            "inputValue1": {1: 12.5, 2: 8, 3: 4},
-            "inputValue2": {1: 2, 2: 8, 3: 12.5, 4: 4},
-            "inputValue3": {1: 8, 2: 8, 3: 4, 4: 12.5},
-            "inputValue4": {1: 4, 2: 12.5, 3: 4},
-            "inputValue5": {1: 2, 2: 2, 3: 12.5, 4: 8},
-            "inputValue6": {1: 8, 2: 2, 3: 2, 4: 12.5},
-            "inputValue7": {1: 2, 2: 2, 3: 4, 4: 12.5},
-            "inputValue8": {1: 8, 2: 0, 3: 4, 4: 12.5},
+            "inputValue1": {1: 16.6, 2: 4, 3: 12, 4 : 8},
+            "inputValue2": {1: 16.6, 2: 4, 3: 12, 4: 8},
+            "inputValue3": {1: 12, 2: 4, 3: 16.6, 4: 8},
+            "inputValue4": {1: 12, 2: 16.6, 3: 8, 4: 4},
+            "inputValue5": {1: 4, 2: 12, 3: 16.6, 4: 8},
+            "inputValue6": {1: 4, 2: 12, 3: 16.6, 4: 8},
         }
 
         result_value = sum(value_mapping[key][value] for key, value in data.items())
