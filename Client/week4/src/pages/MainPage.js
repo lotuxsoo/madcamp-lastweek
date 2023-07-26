@@ -1,10 +1,20 @@
-import React, { useEffect }  from "react";
+import React, { useEffect, useState }  from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/form.css"
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const [chars, setChars] = useState([]);
 
+  useEffect(() => {
+    document.body.style.backgroundColor = '#0D0D0D';
+    const text = "What's Your Type?";
+    setChars(text.split(''));
+
+    return () => {
+      document.body.style.backgroundColor = null; // cleanup function to reset
+    };
+  }, []);
   useEffect(() => {
     document.body.style.backgroundColor = '#0D0D0D';
     return () => {
@@ -27,7 +37,15 @@ const MainPage = () => {
 
   return (
     <div className = "main" style={{ backgroundColor: '#0D0D0D', height: '100vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h1 className="main-title" style={{ marginBottom: '100px' }}>What's Your Type?</h1>
+      <h1 className="main-title" style={{ marginBottom: '100px' }}>{chars.map((char, index) => (
+          <span 
+            className="char" 
+            style={{ animationDelay: `${index * 0.1}s` }} 
+            key={index}
+          >
+            {char}
+          </span>
+        ))}</h1>
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginBottom: '30px' }}>
         <button className = "test1_button" style={{ marginRight: '20px' }} type="button" onClick={goTo1}>
           소개팅 유형 테스트

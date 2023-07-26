@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/CoupangPage.css';  // assuming you have a CSS file named CoupangPage.css in the same folder
 
-const CoupangPage4 = () => {
+const CoupangPage3 = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
     window.open('https://link.coupang.com/a/4NDwH', '_blank');
-    navigate('/result4');
+    navigate('/result3');
   };
 
   const loadCoupangScript = () => {
@@ -42,4 +42,4 @@ const CoupangPage4 = () => {
   );
 };
 
-export default CoupangPage4;
+export default CoupangPage3;
