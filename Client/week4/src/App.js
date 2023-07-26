@@ -8,7 +8,6 @@ import ResultPage2 from "./pages/ResultPage2";
 import ResultPage from "./pages/ResultPage";
 import CoupangPage from "./pages/Coupang";
 import CoupangPage2 from "./pages/Coupang2";
-import TestForm from "./pages/TestForm";
 import TestPage4 from "./pages/TestPage4";
 
 function App() {
@@ -17,11 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/test1" element={<TestPage1 />} />
-        <Route path="/test2" element={<TestForm />} />
+        <Route path="/test2" element={<TestPage2 />} />
         <Route path="/test3" element={<TestPage3 />} />
         <Route path="/test4" element={<TestPage4 />} />
-        <Route path="/result2" element={<ResultPage2 />} />
         <Route path="/result" element={<ResultPage />} />
+        <Route path="/result2" element={<ResultPage2 />} />
         <Route path="/coupang" element={<CoupangPage />} />
         <Route path="/coupang2" element={<CoupangPage2 />} />
       </Routes>

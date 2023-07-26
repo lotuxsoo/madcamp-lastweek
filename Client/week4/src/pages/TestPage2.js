@@ -1,10 +1,13 @@
 import React, { useState, createRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/test2_form.css";
+import { useGlobalState } from "./GlobalStateProvider";
 
 function TestPage2() {
   const navigate = useNavigate();
   const [showNextTest, setShowNextTest] = useState(0);
+
+  const { globalState, setGlobalState } = useGlobalState();
 
   const refs = [
     createRef(),
@@ -30,37 +33,45 @@ function TestPage2() {
   const [question9, setQuestion9] = useState("");
   const [question10, setQuestion10] = useState("");
 
-  const getInputValue = () => {
-    const inputValue1 = question1;
-    const inputValue2 = question2;
-    const inputValue3 = question3;
-    const inputValue4 = question4;
-    const inputValue5 = question5;
-    const inputValue6 = question6;
-    const inputValue7 = question7;
-    const inputValue8 = question8;
-    const inputValue9 = question9;
-    const inputValue10 = question10;
-    console.log(`Input 1 value: ${inputValue1}`);
-    console.log(`Input 2 value: ${inputValue2}`);
-    console.log(`Input 3 value: ${inputValue3}`);
-    console.log(`Input 4 value: ${inputValue4}`);
-    console.log(`Input 5 value: ${inputValue5}`);
-    console.log(`Input 6 value: ${inputValue6}`);
-    console.log(`Input 7 value: ${inputValue7}`);
-    console.log(`Input 8 value: ${inputValue8}`);
-    console.log(`Input 9 value: ${inputValue9}`);
-    console.log(`Input 10 value: ${inputValue10}`);
+  const getInputValue = async () => {
+    const data = {
+      inputValue1: question1,
+      inputValue2: question2,
+      inputValue3: question3,
+      inputValue4: question4,
+      inputValue5: question5,
+      inputValue6: question6,
+      inputValue7: question7,
+      inputValue8: question8,
+      inputValue9: question9,
+      inputValue10: question10,
+    };
+
+    console.log("Sending data:", data);
+
+    const response = await sendToDjango(data);
+    setGlobalState(response);
+    console.log("Response from server:", response);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const currentQuestionState = eval("question" + (showNextTest + 1));
-    if (currentQuestionState === "") {
-      alert("정답을 선택해주세요");
-    } else {
-      getInputValue();
-      navigate("/Coupang2");
+  const sendToDjango = async (data) => {
+    try {
+      const response = await fetch("http://localhost:8000/test2/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+
+      const jsonResponse = await response.json();
+      return jsonResponse;
+    } catch (error) {
+      console.error("Failed to send data:", error);
     }
   };
 
@@ -76,6 +87,18 @@ function TestPage2() {
   const goToPrev = () => {
     if (showNextTest > 0) {
       setShowNextTest(showNextTest - 1); // decrease the state by 1 when prev button is clicked
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const currentQuestionState = eval("question" + (showNextTest + 1));
+    if (currentQuestionState === "") {
+      alert("정답을 선택해주세요");
+    } else {
+      getInputValue();
+      navigate("/Coupang2");
     }
   };
 
@@ -134,14 +157,6 @@ function TestPage2() {
                 onClick={() => setQuestion1(5)}
               >
                 데이터 분석과 인공지능(전처리, 분석, 시각화, 머신러닝, 딥러닝)
-              </button>
-              <button
-                type="button"
-                className={question1 === 6 ? "selected" : ""}
-                value="6"
-                onClick={() => setQuestion1(6)}
-              >
-                이 길은 그냥 내 길이 아닌 것 같다..
               </button>
             </div>
             <div className="btn_wrap">
@@ -722,15 +737,6 @@ function TestPage2() {
               <button className="submit_btn">제 출</button>
             </div>
           </div>
-
-          {/* 
-          <div className="test" ref={refs[3]}>
-            <button className="prev_btn" onClick={goToPrev}>
-              이 전
-            </button>
-            <input type="su
-            bmit" value="제 출" className="submit_btn" />
-          </div> */}
         </form>
       </div>
     </div>

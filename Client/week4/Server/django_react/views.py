@@ -58,40 +58,10 @@ def form(request):
 
 
 
-@api_view(['POST'])
-@csrf_exempt
-def result(request):
-    # 문항 수
-    N = Question.objects.count()
-    # 개발자 유형 수
-    K = Developer.objects.count()
-
-    # 개발유형마다 몇개인지 저장할 리스트 counter[1] = 1번 유형점수(개수)
-    counter = [0]*(K+1)
-    
-    if request.method == 'POST':
-        for n in range(1,N+1):
-            developer_id = int(request.POST[f'question-{n}'])
-            counter[developer_id] +=1
-            
-        # 최고점 개발 유형
-        best_developer_id = max(range(1,K+1), key=lambda id : counter[id])
-        best_developer = Developer.objects.get(pk=best_developer_id)
-        best_developer.count += 1
-        best_developer.save()
-
-    context = {
-        "developer": best_developer,
-        "counter": counter,
-    }
-
-    return render(request, "result.html", context=context)
-
-
 def test1(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        print("Received data:", data)  # 콘솔에 데이터 출력
+        print("Received data1:", data)  # 콘솔에 데이터 출력
 
         value_mapping = {
             "inputValue1": {1: 12.5, 2: 8, 3: 4},
@@ -121,60 +91,71 @@ def test1(request):
 
         return JsonResponse(response_data)
 
+def test2(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        print("Received data2:", data)  # Print data to console
+
+        value_mapping = {
+            # 1:게임 2:백엔드 3:정보보안 4:프론트 5:데이터분석
+            "inputValue1": {1: 1, 2: 2, 3: 3, 4: 4, 5: 5},
+            "inputValue2": {1: 5, 2: 4, 3: 1, 4: 2, 5: 3},
+            "inputValue3": {1: 2, 2: 5, 3: 4, 4: 3, 5: 1},
+            "inputValue4": {1: 4, 2: 2, 3: 3, 4: 5, 5: 1},
+            "inputValue5": {1: 2, 2: 4, 3: 5, 4: 3, 5: 1},
+            "inputValue6": {1: 5, 2: 2, 3: 4, 4: 1, 5: 3},
+            "inputValue7": {1: 4, 2: 2, 3: 5, 4: 4, 5: 1},
+            "inputValue8": {1: 4, 2: 3, 3: 5, 4: 1, 5: 3},
+            "inputValue9": {1: 4, 2: 3, 3: 2, 4: 5, 5: 1},
+            "inputValue10": {1: 4, 2: 2, 3: 5, 4: 1, 5: 3},
+        }
+
+        response_data = []  # Initialize an empty list to store the values
+
+        # Loop through each inputValue key and get the selected value from the data
+        for i in range(1, 11):
+            key = f"inputValue{i}"
+            value = int(data.get(key))  # Convert value to integer
+            if value is not None:
+                response_data.append(value)
+
+        # Count occurrences of each value in response_data
+        counts = {i: response_data.count(i) for i in range(1, 6)}
+        print('val',counts.values())
+
+        # Find the key with the maximum value
+        max_key = max(counts, key=counts.get)
+        return JsonResponse({"max_key": max_key}, safe=False)
+    else:
+        return JsonResponse({"error": "Only POST method is supported"}, status=400)
 
 
-# @api_view(['GET'])
-# def result(request):
-#     # 문항 수
-#     N = Question.objects.count()
-#     # 개발자 유형 수
-#     K = Developer.objects.count()
+@api_view(['POST'])
+@csrf_exempt
+def result(request):
+    # 문항 수
+    N = Question.objects.count()
+    # 개발자 유형 수
+    K = Developer.objects.count()
+
+    # 개발유형마다 몇개인지 저장할 리스트 counter[1] = 1번 유형점수(개수)
+    counter = [0]*(K+1)
     
-#     # 개발유형마다 몇개인지 저장할 리스트 counter[1] = 1번 유형점수(개수)
-#     counter = [0]*(K+1)
-    
-#     for n in range(1,N+1):
-#         developer_id = int(request.POST[f'question-{n}'][0])
-#         counter[developer_id] +=1
-        
-#     # 최고점 개발 유형
-#     best_developer_id = max(range(1,K+1), key=lambda id : counter[id])
-#     best_developer = Developer.objects.get(pk=best_developer_id)
-#     best_developer.count += 1
-#     best_developer.save()
+    if request.method == 'POST':
+        for n in range(1,N+1):
+            developer_id = int(request.POST[f'question-{n}'])
+            counter[developer_id] +=1
+            
+        # 최고점 개발 유형
+        best_developer_id = max(range(1,K+1), key=lambda id : counter[id])
+        best_developer = Developer.objects.get(pk=best_developer_id)
+        best_developer.count += 1
+        best_developer.save()
 
-#     response_data = {
-#         'developer': {
-#             'name': best_developer.name,
-#             'count': best_developer.count
-#         },
-#         'counter': counter,
-#     }    
+    context = {
+        "developer": best_developer,
+        "counter": counter,
+    }
 
-#     return JsonResponse(response_data)
+    return render(request, "result.html", context=context)
 
-# def result(request):
-#     # 문항 수
-#     N = Question.objects.count()
-#     # 개발자 유형 수
-#     K = Developer.objects.count()
-    
-#     # 개발유형마다 몇개인지 저장할 리스트 counter[1] = 1번 유형점수(개수)
-#     counter = [0]*(K+1)
-    
-#     for n in range(1,N+1):
-#         developer_id = int(request.POST[f'question-{n}'][0])
-#         counter[developer_id] +=1
-        
-#     # 최고점 개발 유형
-#     best_developer_id = max(range(1,K+1), key=lambda id : counter[id])
-#     best_developer = Developer.objects.get(pk=best_developer_id)
-#     best_developer.count += 1
-#     best_developer.save()
-
-#     context = {
-#         'developer': best_developer,
-#         'counter': counter,
-#     }    
-
-#     return render(request, 'result.html', context=context)
