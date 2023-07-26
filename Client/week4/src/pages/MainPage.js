@@ -38,10 +38,10 @@ const MainPage = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
         <button className = "test3_button" style={{ marginRight: '20px' }} type="button" onClick={goTo3}>
-          test3
+          사투리 테스트
         </button>
         <button className = "test4_button" type="button" onClick={goTo4}>
-          test4
+          밈 테스트
         </button>
       </div>
     </div>
