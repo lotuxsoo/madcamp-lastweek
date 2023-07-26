@@ -189,7 +189,9 @@ function ResultPage2() {
             </div>
             <div className="result_explains">
               <div className="explain">
-                <h3 className="title">나와 맞는 개발 유형은 백엔드 개발자!</h3>
+                <h3 className="title">
+                  나와 맞는 개발 유형은 데이터분석 개발자!
+                </h3>
                 <ul>
                   <li>
                     하루하루 계획을 세워야 함. 준비없이 갑작스럽게 해야 될 일이
@@ -282,7 +284,7 @@ function ResultPage2() {
                 </ul>
               </div>
               <div className="explain">
-                <h3 className="title">정보보안이란?</h3>
+                <h3 className="title">정보 보안이란?</h3>
                 <ul>
                   <li>
                     정보보안은 보안 취약점을 찾아내어 문제를 해결하고 이를
@@ -319,7 +321,7 @@ function ResultPage2() {
               }}
             >
               <div className="titles">
-                <h3>Game을 좋아하고, 상상하길 즐겨하는 당신은!</h3>
+                <h3>게임을 좋아하고, 상상하길 즐겨하는 당신은!</h3>
                 <h1>게임 개발</h1>
               </div>
               <div className="result_img">
