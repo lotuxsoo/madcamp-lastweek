@@ -109,9 +109,23 @@ const ResultPage = () => {
         </span>
       </div>
 
+
       {percentageValue <= 50 && (
+        <div
+        style={{
+          position: "relative",
+          height: "100vh",
+          backgroundColor: "#ba93e1",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        
+        }}
+      >
         <iframe
-          style={{ marginTop: "100px" }}
+          
           width="1000px"
           height="500px"
           src="https://www.youtube.com/embed/vsJGZOnMVt0"
@@ -119,6 +133,7 @@ const ResultPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
+        </div>
       )}
 
       {percentageValue > 50 && (
