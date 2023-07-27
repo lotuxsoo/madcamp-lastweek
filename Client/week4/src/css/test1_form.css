@@ -15,7 +15,7 @@
 }
 
 .testPage1 {
-  background-color: #E9DFF2;
+  background-color: #e9dff2;
   color: #000;
   font-family: "NEXON Lv1 Gothic OTF";
   min-height: 100vh;
@@ -103,14 +103,14 @@
   border-radius: 10px;
   font-size: 20px;
   font-family: "NEXON Lv1 Gothic OTF";
-  background-color: #A673D9;
+  background-color: #a673d9;
   cursor: pointer;
   color: #fff;
 }
 
 .testPage1 button:hover {
   background-color: #fff;
-  color: #A673D9;
+  color: #a673d9;
 }
 
 .answer button {

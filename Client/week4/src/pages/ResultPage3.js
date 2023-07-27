@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useGlobalState } from "./GlobalStateProvider";
 import { shareKakao } from "./shareKakaoLink";
-import resultImg1 from "../assets/result1.PNG";
-import resultImg2 from "../assets/result2.PNG";
-import resultImg3 from "../assets/result3.PNG";
 import kakaoLogo from "../assets/kakaoLogo.PNG";
-import "../css/test1_form.css";
+import "../css/result_form.css";
+import couple from "../assets/couple.jpeg";
 
 const ResultPage3 = () => {
   const { globalState } = useGlobalState();
@@ -103,11 +101,9 @@ const ResultPage3 = () => {
             flexDirection: "column",
           }}
         >
-          <img style={{ marginTop: "100px" }} src={resultImg1} alt="img" />
-          <img style={{ marginTop: "100px" }} src={resultImg2} alt="img" />
           <img
             style={{ marginTop: "100px", marginBottom: "100px" }}
-            src={resultImg3}
+            src={couple}
             alt="img"
           />
         </div>
