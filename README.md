@@ -41,6 +41,10 @@ Week4 4분반 경민,수연팀
 
 ### 2.TestPage
 
+***Major features***
+- 항목이 선택이 안되면 다음 버튼이 눌리지 않습니다.
+- 제출버튼을 누르면 Django로 선택된 값을 json 파일로 전송합니다.
+
 <img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/0362736c-ceb1-4e87-8a10-1888786e813d" width="1000" height="700">
 <br/>
 <img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/5a9f2de4-1f07-443f-9854-43129ba361a6" width="1000" height="700">
@@ -53,6 +57,10 @@ Week4 4분반 경민,수연팀
 ---
 
 ### 3.ResultPage
+
+
+***Major features***
+- 서버에서 결과값을 계산 후 반영합니다.
 
 <img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/17b66718-85d4-4c69-ab2f-727a6d2ef6d9" width="1000" height="700">
 <br/>
