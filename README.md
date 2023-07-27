@@ -1,9 +1,6 @@
 # What's Your Type
 ---
 
-<img src="https://github.com/rudals9686/madcamp_week3/assets/20718582/8fba3bbb-cadd-4a6c-b51a-3c1949f0c239" width="1000" height="700">
-<img src="https://github.com/rudals9686/madcamp_week3/assets/20718582/5d0c0d7a-43b0-4b5d-8b5f-a854ab63e6a9" width="800" height="700">
-
 Week4 4분반 경민,수연팀
 
 - 네가지의 유형테스트를 제공합니다.
@@ -32,8 +29,7 @@ Week4 4분반 경민,수연팀
 
 ### 1.Main page
 
-<img src="https://github.com/rudals9686/madcamp_week3/assets/20718582/c91b757b-aec6-443f-b19c-f682206c6ad1" width="1000" height="700">
-<img src="https://github.com/rudals9686/madcamp_week3/assets/20718582/081d037a-c0ff-479e-a135-c5de9eb31aff" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/055b5074-72d4-4af3-b75b-1cbc1f5082f0" width="1000" height="700">
 
 
 ***Major features***
