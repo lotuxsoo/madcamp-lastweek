@@ -15,7 +15,7 @@
 }
 
 .testPage3 {
-  background-color: #e9dff2;
+  background-color: #F2F2F2;
   color: #000;
   font-family: "NEXON Lv1 Gothic OTF";
   min-height: 100vh;
@@ -83,7 +83,7 @@
 .testPage3 .next_btn,
 .testPage3 .prev_btn,
 .testPage3 .submit_btn {
-  background-color: #585859;
+  background-color: #F27999;
   width: 100px;
   height: 50px;
 }
@@ -92,7 +92,7 @@
 .testPage3 .prev_btn:hover,
 .testPage3 .submit_btn:hover {
   background-color: #fff;
-  color: #585859;
+  color: #F27999;
 }
 
 .testPage3 button {
@@ -103,14 +103,14 @@
   border-radius: 10px;
   font-size: 20px;
   font-family: "NEXON Lv1 Gothic OTF";
-  background-color: #a673d9;
+  background-color: #F2A2A2;
   cursor: pointer;
   color: #fff;
 }
 
 .testPage3 button:hover {
   background-color: #fff;
-  color: #a673d9;
+  color: #F2A2A2;
 }
 
 .answer button {

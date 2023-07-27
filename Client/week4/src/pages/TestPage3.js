@@ -140,7 +140,7 @@ function TestPage3() {
               <button
                 type="button"
                 className={question1 === 4 ? "selected" : ""}
-                value="3"
+                value="4"
                 onClick={() => setQuestion1(4)}
               >
                 오늘 약속을 미루고 싶다.
