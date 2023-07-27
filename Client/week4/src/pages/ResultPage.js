@@ -5,7 +5,6 @@ import resultImg1 from "../assets/result1.PNG";
 import resultImg2 from "../assets/result2.PNG";
 import resultImg3 from "../assets/result3.PNG";
 import kakaoLogo from "../assets/kakaoLogo.PNG";
-import "../css/test1_form.css";
 
 const ResultPage = () => {
   const { globalState } = useGlobalState();
@@ -34,7 +33,7 @@ const ResultPage = () => {
     <div
       style={{
         position: "relative",
-        backgroundColor: "#0D0D0D",
+        backgroundColor: "#ba93e1",
         width: "100%",
         display: "flex",
         justifyContent: "center",
@@ -51,39 +50,70 @@ const ResultPage = () => {
           textAlign: "right",
         }}
       >
-        <button
+        <div
           style={{
-            backgroundColor: "#0D0D0D",
-            width: "60px",
-            height: "50px",
-            border: "none",
-            marginRight: "10px",
+            margin: "30px",
           }}
-          onClick={() =>
-            shareKakao("http://localhost:3000/result", "소개팅 테스트")
-          }
         >
-          <img
-            className="w-12 h-12"
-            style={{ width: "100%", height: "100%" }}
-            src={kakaoLogo}
-            alt={"Kakao Logo"}
-          />
-        </button>
+          <button
+            style={{
+              backgroundColor: "#ba93e1",
+              width: "50px",
+              height: "50px",
+              border: "none",
+              marginRight: "40px",
+            }}
+            onClick={() =>
+              shareKakao("http://localhost:3000/result", "소개팅 테스트")
+            }
+          >
+            <img
+              className="w-12 h-12"
+              style={{ width: "50px", height: "50px" }}
+              src={kakaoLogo}
+              alt={"Kakao Logo"}
+            />
+          </button>
+          <p
+            style={{
+              color: "black",
+              fontFamily: "NEXON Lv1 Gothic OTF",
+              marginTop: "10px",
+            }}
+          >
+            카카오톡 공유하기
+          </p>
+        </div>
       </div>
 
-      <span style={{ color: "white", fontFamily: "Arial", fontSize: 50 }}>
-        {message}:
-      </span>
-      <span style={{ color: "red", fontFamily: "Arial", fontSize: 70 }}>
-        {percentage}
-      </span>
+      <div style={{ marginTop: "100px" }}>
+        <span
+          style={{
+            color: "white",
+            fontFamily: "NEXON Lv1 Gothic OTF",
+            fontSize: 50,
+            fontWeight: "bold",
+          }}
+        >
+          {message}:
+        </span>
+        <span
+          style={{
+            color: "red",
+            fontFamily: "NEXON Lv1 Gothic OTF",
+            fontSize: 70,
+            fontWeight: "bold",
+          }}
+        >
+          {percentage}
+        </span>
+      </div>
 
       {percentageValue <= 50 && (
         <iframe
           style={{ marginTop: "100px" }}
-          width="1200"
-          height="700"
+          width="1000px"
+          height="500px"
           src="https://www.youtube.com/embed/vsJGZOnMVt0"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -95,12 +125,13 @@ const ResultPage = () => {
         <div
           style={{
             position: "relative",
-            backgroundColor: "#0D0D0D",
+            backgroundColor: "#ba93e1",
             width: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
+            margin: "50px",
           }}
         >
           <img style={{ marginTop: "100px" }} src={resultImg1} alt="img" />
