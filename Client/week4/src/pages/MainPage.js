@@ -5,6 +5,26 @@ import "../css/form.css";
 const MainPage = () => {
   const navigate = useNavigate();
   const [chars, setChars] = useState([]);
+  const text = "What's Your Type?";
+  const [visibleText, setVisibleText] = useState("");
+  useEffect(() => {
+    document.body.style.backgroundColor = "#0D0D0D";
+    let i = 0;
+    const intervalId = setInterval(() => {
+      if (i < text.length) {
+        setVisibleText(text.substr(0, i+1));
+        i++;
+      } else {
+        setVisibleText("");
+        i = 0;
+      }
+    }, 200); // adjust the delay here
+
+    return () => {
+      document.body.style.backgroundColor = null;
+      clearInterval(intervalId);
+    };
+  }, []);
 
   useEffect(() => {
     document.body.style.backgroundColor = "#0D0D0D";
@@ -47,17 +67,11 @@ const MainPage = () => {
         flexDirection: "column",
       }}
     >
-      <h1 className="main-title" style={{ marginBottom: "100px" }}>
-        {chars.map((char, index) => (
-          <span
-            className="char"
-            style={{ animationDelay: `${index * 0.1}s` }}
-            key={index}
-          >
-            {char}
-          </span>
-        ))}
-      </h1>
+      <div style={{ height: '100px', marginBottom: '50px' }}> {/* adjust the height as needed */}
+        <h1 className="main-title">
+          {visibleText}
+        </h1>
+      </div>
       <div
         style={{
           display: "flex",
