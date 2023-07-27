@@ -64,7 +64,12 @@ Week4 4분반 경민,수연팀
 
 ### 3.ResultPage
 
-<img src="https://github.com/rudals9686/madcamp_week3/assets/20718582/1cd95a9b-c770-49e1-b697-82cbf7948caa" width="1000" height="400">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/17b66718-85d4-4c69-ab2f-727a6d2ef6d9" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/c2657233-9a8b-4c8f-84f5-18f4cddd5e9e" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/f8777e2d-f267-42ea-85d5-3cb10f27a67b" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/8f5f479d-3afd-4985-930e-95c31cd571eb" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/251a13a6-9296-442b-8266-35fa8469f548" width="1000" height="700">
+<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/26a21d48-d466-486a-8d47-0e67167255cb" width="1000" height="700">
 
 ***Major features***
 - 사용자가 데이터베이스에 있는 모든 포트폴리오를 검색할 수 있습니다.
