@@ -29,7 +29,7 @@
 - 사용자는 4가지 재밌는 주제의 유형 테스트 중 원하는 것을 선택할 수 있습니다. 각 테스트 버튼을 누르면 해당 테스트 페이지로 이동합니다.
 - 테스트를 전부 마치면, 테스트 결과에 알맞는 결과 페이지가 다르게 나타납니다.
 
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/055b5074-72d4-4af3-b75b-1cbc1f5082f0"/>
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/3af6f82c-f1b9-43ae-afef-ac552490f703"/>
 
 ---
 
@@ -37,28 +37,27 @@
 - 항목이 선택되지 않으면 다음으로 가는 버튼이 눌리지 않습니다.
 - 제출버튼을 누르면 Django로 선택된 값을 json 파일로 전송합니다.
 
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/0362736c-ceb1-4e87-8a10-1888786e813d"/>
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/27fbec29-4fc0-4f4f-84a2-03d75aad4af7"/>
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/5a9f2de4-1f07-443f-9854-43129ba361a6">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/22fcfbeb-a531-45b3-bf61-05574597b330">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/e53c373d-b772-44d3-bba0-bde5dc4eb12a">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/73697000-ae6d-4537-a5f0-6fe738db90f2">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/274cfa55-6b5a-4f0f-ae9d-092a15bbb05f">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/7cbff9cc-e9d3-4902-a65c-1c1d10b70ca0">
 <br/>
 
 ---
 
 ### 3.ResultPage
-- 유형 테스트 결과를 처리한 후 결과 화면을 보여줍니다.
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/17b66718-85d4-4c69-ab2f-727a6d2ef6d9">
+- 사용자의 유형 테스트 결과를 처리한 후 결과 화면을 보여줍니다.
+
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/eebeab94-ef6a-4596-bb30-afb6083320d1">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/c2657233-9a8b-4c8f-84f5-18f4cddd5e9e">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/0c86640e-1fee-42f0-bbf8-8e3221a46abc">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/f8777e2d-f267-42ea-85d5-3cb10f27a67b">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/4455332b-64c3-4717-a8d5-a5124f91f6c5">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/8f5f479d-3afd-4985-930e-95c31cd571eb">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/c3da663c-7e1c-4d8d-922b-5556bfd88c71">
 <br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/251a13a6-9296-442b-8266-35fa8469f548">
-<br/>
-<img src="https://github.com/lotuxsoo/madcamp-week4/assets/55384167/26a21d48-d466-486a-8d47-0e67167255cb">
+<img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/75fca045-2b51-415d-b732-af93e267304a">
 <br/>
