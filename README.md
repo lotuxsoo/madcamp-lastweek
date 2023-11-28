@@ -25,7 +25,7 @@
 ### c. 기능 소개
 
 ### 1.Main page
-- 웹페이지 이름인 "What's Your Type?"이 한 글자씩 나타나며 애니메이션 효과가 있습니다.
+- 웹페이지 이름인 "What's Your Type?"이 한 글자씩 나타나는 애니메이션 효과가 있습니다.
 - 사용자는 4가지의 유형 테스트 중 원하는 것을 선택할 수 있습니다. 각 테스트 버튼을 누르면 해당 테스트 페이지로 이동합니다.
 
 <img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/3af6f82c-f1b9-43ae-afef-ac552490f703"/>
@@ -33,7 +33,7 @@
 ---
 
 ### 2.Test Page
-- 항목이 하나라도 선택되지 않으면 다음 버튼이 눌리지 않습니다.
+- 항목이 선택되지 않으면 다음으로 이동하지 않습니다.
 - 제출 버튼을 누르면 사용자의 결과 값들을 서버로 전달합니다.
 
 <img src="https://github.com/lotuxsoo/madcamp-lastweek/assets/86272865/27fbec29-4fc0-4f4f-84a2-03d75aad4af7"/>
